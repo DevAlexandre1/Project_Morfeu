@@ -6,12 +6,12 @@ function App() {
   return (
    
    <div className="main_container">
-      <div>
-          <div className="container_login">
+      
+          
             <LoginPage/>
 
-          </div>
-      </div>
+         
+      
    </div>
 
   );
