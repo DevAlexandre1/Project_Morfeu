@@ -1,14 +1,14 @@
 import styles from "./LoginPage.module.css"
-const backImgLogin = new URL("./assets/LoginPage.jpg", import.meta.url)
+import LoginImg from "../assets/logoBrancoLogin.png"
+// const backImgLogin = new URL("./assets/LoginPage.jpg", import.meta.url)
 //const imgLogin = new URL("../assets/HomePageButton.jpg")
 const LoginPage = () => {
   return (
     <section className={styles.main_log}>
       <div >           
           <form className={styles.formLogin}>
-            <div>
-
-
+            <div className ={styles.imgLogin}>
+                <img src={LoginImg} alt="ImagemLogin" />
             </div>
               <div >
                   <label htmlFor="email">Email: </label>   
@@ -18,8 +18,8 @@ const LoginPage = () => {
                   <label htmlFor="senha">Senha: </label>
                   <input type="password" name="senha" id="senha" placeholder="Informe sua senha"/>
               </div>
-              <div>
-                <input type="submit" value="Enviar" />
+              <div >
+                <input className={styles.buttonEnviar}  type="submit" value="Enviar" />
               </div>
               
           </form>
