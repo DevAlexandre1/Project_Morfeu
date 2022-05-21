@@ -1,15 +1,19 @@
-import Homepage from '../src/assets/LoginPage.jpg';
 import './App.css';
-import LoginPage from './components/LoginPage';
+import LoginPage from "./components/LoginPage"
 
 
 function App() {
   return (
-    <div className="App">
+   
+   <div className="main_container">
       <div>
-        <LoginPage Homepage/>
+          <div className="container_login">
+            <LoginPage/>
+
+          </div>
       </div>
-    </div>
+   </div>
+
   );
 }
 
