@@ -1,4 +1,4 @@
-.main_container{  
+/* .main_container{  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,4 +6,4 @@
   height: 100vh;
   background-color: rgb(34, 34, 39);
   /* background-image: url("./assets/LoginPage.jpg"); */
-}
+

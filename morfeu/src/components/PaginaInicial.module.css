@@ -1,0 +1,51 @@
+.container{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    height: 100vh;
+}
+.body_conteiner{
+    max-width: 100%;
+    height: 100vh;
+}
+
+.header_container{
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 74px;
+  
+    background-color: rgb(17, 19, 89);
+}
+
+.img_home{
+    margin-left: 30px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.button_login{
+    height: 40px;
+    width: 100px;
+    background-color: rgb(255,203,5); /*Cor oficial dourado FATO*/
+    margin-right: 30px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(63, 61, 61);
+
+}
+.button_login:hover{
+    background-color: rgb(255, 218, 72);
+    cursor: pointer;
+}
+
+
+.links_menu{
+    color: white;
+    text-decoration: none;
+    padding: 24px;
+    font-size: 22px;
+}
