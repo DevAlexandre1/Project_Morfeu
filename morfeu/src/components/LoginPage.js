@@ -2,7 +2,7 @@ import styles from "./LoginPage.module.css"
 import LoginImg from "../assets/logoBrancoLogin.png"
 import {useState} from 'react'
 
-const LoginPage = () => {
+const LoginPage = (alterRouterMenu) => {
   
   //Criando o gerenciador de dados do form
   
@@ -40,7 +40,7 @@ const handleSubmit = (event) =>{
                   <input type="password" name="senha" id="senha" placeholder="Informe sua senha" onChange={handleSenha}/>
               </div>
               <div >
-                <input className={styles.buttonEnviar}  type="submit" value="Enviar" />
+                <input onClick={alterRouterMenu} className={styles.buttonEnviar}  type="submit" value="Enviar" />
               </div>
               
           </form>

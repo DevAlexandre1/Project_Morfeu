@@ -2,7 +2,7 @@ import styles from "./PaginaInicial.module.css"
 
 import ImgHome from "../assets/logoBrancoLogin.png"
 
-const PaginaInicial = () => {
+const PaginaInicial = ({alterRouter}) => {
   return (
     <div className={styles.container}>       
             <header className={styles.header_container}>
@@ -14,7 +14,7 @@ const PaginaInicial = () => {
                     <a  className={styles.links_menu} href="">Suporte</a>
                     <a  className={styles.links_menu} href="">Chat</a>                  
                 </nav>
-                <button className={styles.button_login} >Login</button>
+                <button onClick={alterRouter} className={styles.button_login} >Login</button>
             </header>       
      </div>
   )
