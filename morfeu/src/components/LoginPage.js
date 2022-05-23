@@ -12,8 +12,8 @@ const LoginPage = (alterRouterMenu) => {
   const handleEmail = (e) => {
     setEmail(e.target.valeu);
   }
-  const handleSenha = (el) => {
-    setSenha(el.target.valeu);
+  const handleSenha = (e) => {
+    setSenha(e.target.valeu);
   }
 const handleSubmit = (event) =>{
   event.preventDefault();

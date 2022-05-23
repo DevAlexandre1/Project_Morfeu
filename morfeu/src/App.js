@@ -1,7 +1,7 @@
 import './App.css';
 import LoginPage from "./components/LoginPage"
 import PaginaInicial from './components/PaginaInicial';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PaginaInicialBody from './components/PaginaInicialBody';
 
 
@@ -25,9 +25,11 @@ function App() {
     setNaveRouter(router[2].name)
   } 
 
+
   return (
    
    <div className='div_app'> 
+      <PaginaInicial/>
       {router === "inicial" && <PaginaInicial alterRouter={alterRouter}/>} 
       {router === "login" && <LoginPage alterRouterMenu={alterRouterMenu}/>} 
       {router === "menu" && <PaginaInicialBody alterRouter={alterRouter}/>} 

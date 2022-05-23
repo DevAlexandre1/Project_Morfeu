@@ -16,6 +16,9 @@ const PaginaInicial = ({alterRouter}) => {
                 </nav>
                 <button onClick={alterRouter} className={styles.button_login} >Login</button>
             </header>       
+            <body className={styles.bodyInicial}>
+              
+            </body>
      </div>
   )
 }

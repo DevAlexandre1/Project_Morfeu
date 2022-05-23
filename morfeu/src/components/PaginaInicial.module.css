@@ -3,7 +3,6 @@
     margin: 0;
     width: 100%;
     height: 100vh;
-    border-bottom: 2px solid white;
 }
 .header_container{    
     display: flex;
@@ -11,9 +10,9 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: 74px;
-  
-    background-color: rgb(40, 40, 48);
+    height: 74px;    
+    border-bottom: 1px solid white;
+    background-color: rgb(29, 29, 36);
 }
 
 .img_home{
@@ -44,5 +43,10 @@
     padding: 24px;
     font-size: 20px;
     font-weight: 400;
+}
+
+.bodyInicial{
+    background-color: rgb(40,42,54);
+    height: 100vh;
 }
 
