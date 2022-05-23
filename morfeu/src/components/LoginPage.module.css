@@ -1,4 +1,11 @@
+.container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+}
 .main_log{
+    display: flex;    
     text-align: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
@@ -25,6 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100px;
 }
 
 .buttonEnviar{

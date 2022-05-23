@@ -3,12 +3,8 @@
     margin: 0;
     max-width: 100%;
     height: 100vh;
+    border-bottom: 2px solid white;
 }
-.body_conteiner{
-    max-width: 100%;
-    height: 100vh;
-}
-
 .header_container{
     
     display: flex;
@@ -18,11 +14,11 @@
     width: 100%;
     height: 74px;
   
-    background-color: rgb(17, 19, 89);
+    background-color: rgb(40, 40, 48);
 }
 
 .img_home{
-    margin-left: 30px;
+    margin-left: 10px;
     height: 70px;
     border-radius: 10px;
 }
@@ -47,5 +43,11 @@
     color: white;
     text-decoration: none;
     padding: 24px;
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.body_conteiner{
+    max-width: 100%;
+    height: 100vh;
 }

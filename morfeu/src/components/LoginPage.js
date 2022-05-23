@@ -24,8 +24,9 @@ const handleSubmit = (event) =>{
   
   return (  
 
-    <section className={styles.main_log}>
-      <div >           
+    
+      <div className={styles.container}>         
+        <section className={styles.main_log}> 
           <form className={styles.formLogin} onSubmit={handleSubmit}>
             <div className ={styles.imgLogin}>
                 <img src={LoginImg} alt="ImagemLogin" />
@@ -43,8 +44,9 @@ const handleSubmit = (event) =>{
               </div>
               
           </form>
+        </section>
       </div>
-    </section>
+    
   )
 }
 
