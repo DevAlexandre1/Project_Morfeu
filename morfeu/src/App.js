@@ -15,6 +15,11 @@ const router = [
 function App() {
   const [naveRouter, setNaveRouter] = useState(router[0].name);
 
+ //homePage
+ const alterRouterHome = () =>{
+  setNaveRouter(router[0].name)
+ }
+
   //Pagina de login
   const alterRouter =() =>{
     setNaveRouter(router[1].name)
@@ -29,10 +34,11 @@ function App() {
   return (
    
    <div className='div_app'> 
-      <PaginaInicial/>
-      {router === "inicial" && <PaginaInicial alterRouter={alterRouter}/>} 
-      {router === "login" && <LoginPage alterRouterMenu={alterRouterMenu}/>} 
-      {router === "menu" && <PaginaInicialBody alterRouter={alterRouter}/>} 
+      
+      {naveRouter === "inicial" && <PaginaInicial alterRouter={alterRouter}/>} 
+      {naveRouter === "login" && <LoginPage alterRouterHome={alterRouterHome}/>} 
+      {/* {naveRouter === "menu" && <PaginaInicialBody/>} */}
+      
    </div>
 
   );
