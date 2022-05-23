@@ -9,11 +9,11 @@ function App() {
    
    <div className='div_app'> 
       <header className='header_app'>
-        {/* <PaginaInicial/> */}
+        { <PaginaInicial/> }
       </header>
       
       <main className='main_app'>
-        <LoginPage/> 
+        {/* <LoginPage/>  */}
           
       </main>
       
