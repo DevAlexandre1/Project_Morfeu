@@ -1,8 +1,8 @@
-import styles from "./LoginPage.module.css"
+import styles from "./Login.module.css"
 import LoginImg from "../assets/logoBrancoLogin.png"
 import {useState} from 'react'
 
-const LoginPage = ({alterRouterHome}) => {
+const Login = () => {
   
   //Criando o gerenciador de dados do form
   
@@ -41,7 +41,7 @@ const goHome =()=>{
                   <input type="password" name="senha" id="senha" placeholder="Informe sua senha" onChange={handleSenha}/>
               </div>
               <div >
-                <input onClick={alterRouterHome} className={styles.buttonEnviar}  type="submit" value="Enviar" />
+                <input onClick={handleSubmit} className={styles.buttonEnviar}  type="submit" value="Enviar" />
               </div>              
           </form>
         </section>
@@ -49,4 +49,4 @@ const goHome =()=>{
   )
 }
 
-export default LoginPage
+export default Login

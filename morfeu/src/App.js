@@ -1,43 +1,33 @@
 import './App.css';
-import LoginPage from "./components/LoginPage"
-import PaginaInicial from './components/PaginaInicial';
+
+//Components
+
+
+//States
 import { useState } from 'react';
-import PaginaInicialBody from './components/PaginaInicialBody';
 
+//Routers
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-const router = [
-  {id: 1, name: "inicial"},
-  {id: 2, name: "login" },
-  {id: 3, name: "menu" }
-];
+//Pages
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Sobre from './pages/Sobre'
+import MenuPrincipal from './components/MenuPrincipal';
 
 
 function App() {
-  const [naveRouter, setNaveRouter] = useState(router[0].name);
-
- //homePage
- const alterRouterHome = () =>{
-  setNaveRouter(router[0].name)
- }
-
-  //Pagina de login
-  const alterRouter =() =>{
-    setNaveRouter(router[1].name)
-  }
-
-  //Pagina de Menu
-  const alterRouterMenu =() =>{
-    setNaveRouter(router[2].name)
-  } 
-
-
   return (
-   
+  
    <div className='div_app'> 
-      
-      {naveRouter === "inicial" && <PaginaInicial alterRouter={alterRouter}/>} 
-      {naveRouter === "login" && <LoginPage alterRouterHome={alterRouterHome}/>} 
-      {/* {naveRouter === "menu" && <PaginaInicialBody/>} */}
+      <BrowserRouter>
+        <MenuPrincipal/>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/sobre" element={<Sobre/>}/>
+        </Routes>
+      </BrowserRouter>
       
    </div>
 
