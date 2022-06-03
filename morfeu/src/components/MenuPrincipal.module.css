@@ -24,7 +24,7 @@
 .button_login{
     height: 40px;
     width: 100px;
-    background-color: rgb(255,203,5); /*Cor oficial dourado FATO*/
+    background-color: rgb(255,203,5); 
     margin-right: 30px;
     border: none;
     border-radius: 5px;
@@ -44,7 +44,13 @@
     font-weight: 400;
 }
 
+
 .bodyInicial{
     background-color: rgb(40,42,54);
     height: 100vh;
+}
+
+.active{
+    background-color: gold;
+    color: black;
 }

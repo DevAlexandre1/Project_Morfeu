@@ -10,10 +10,10 @@ const Login = () => {
   const [senha, setSenha] = useState();
 
   const handleEmail = (e) => {
-    setEmail(e.target.valeu);
+    setEmail(e.target.value);
   }
   const handleSenha = (e) => {
-    setSenha(e.target.valeu);
+    setSenha(e.target.value);
   }
 const handleSubmit = (event) =>{
   event.preventDefault();
@@ -22,9 +22,7 @@ const handleSubmit = (event) =>{
   console.log(senha)
 }
   
-const goHome =()=>{
-  
-}
+
   return (      
       <div className={styles.container}>         
         <section className={styles.main_log}> 
