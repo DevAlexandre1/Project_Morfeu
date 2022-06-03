@@ -31,7 +31,7 @@ const handleSubmit = (event) =>{
                 <img src={LoginImg} alt="ImagemLogin" />
             </div>
               <div >
-                  <label htmlFor="email">Email: </label>   
+                  <label htmlFor="email">E-mail: </label>   
                   <input type="email" name="email" id="email" placeholder="Digite seu email" onChange={handleEmail} />
               </div>
               <div>
@@ -39,7 +39,7 @@ const handleSubmit = (event) =>{
                   <input type="password" name="senha" id="senha" placeholder="Informe sua senha" onChange={handleSenha}/>
               </div>
               <div >
-                <input onClick={handleSubmit} className={styles.buttonEnviar}  type="submit" value="Enviar" />
+                <button type="submit">Entrar</button>
               </div>              
           </form>
         </section>

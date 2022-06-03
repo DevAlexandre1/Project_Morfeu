@@ -1,6 +1,9 @@
 import './App.css';
 
 //Components
+import MenuPrincipal from './components/MenuPrincipal';
+import NavBar from './components/NavBar';
+
 
 
 //States
@@ -13,7 +16,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Sobre from './pages/Sobre'
-import MenuPrincipal from './components/MenuPrincipal';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -21,12 +24,14 @@ function App() {
   
    <div className='div_app'> 
       <BrowserRouter>
-        <MenuPrincipal/>
+         {/* Navbar */}
+         <NavBar/>
+                 
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/sobre" element={<Sobre/>}/>
-        </Routes>
+        </Routes>      
       </BrowserRouter>
       
    </div>
