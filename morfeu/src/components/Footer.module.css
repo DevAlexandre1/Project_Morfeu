@@ -1,9 +1,10 @@
 .footer{
-    display: flex;
-    align-items: center;
+    display: flex;    
     justify-content: center;
     font-weight: 400;
-    color: white;
-    background-color: black;
+    color: white;    
     height: 4vh;
+    height: 3vh;
+    width: 100%;
+    background-color: black;
 }
