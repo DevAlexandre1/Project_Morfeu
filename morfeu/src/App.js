@@ -17,6 +17,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Sobre from './pages/Sobre'
 import Footer from './components/Footer';
+import ControleAtividades from './pages/ControleAtividades';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/sobre" element={<Sobre/>}/>
+            <Route path="/ControleAtividades" element={<ControleAtividades/>}/>
         </Routes>      
       </BrowserRouter>
       
