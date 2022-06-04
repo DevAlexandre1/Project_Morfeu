@@ -525,7 +525,7 @@ const Task = (props) => {
                         <p  className={styles.data}>{dataAtual}</p>
                         {/* <h1 id={"cronometro" + index}>00:00:00</h1> */}
                         <div className={styles.container_cronometro}>
-                            <h1 id={"cronometro" + index}>00:00:00</h1>
+                            <h2 id={"cronometro" + index}>00:00:00</h2>
                         </div>
                         
                         

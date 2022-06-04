@@ -7,8 +7,8 @@
 
 
 .task{
-    width: 250px;
-    height: 360px;
+    width: 220px;
+    height: 320px;
     background-color: rgb(253,239,193);
     margin: 10px;
     border: 1px solid rgb(255, 251, 0);
@@ -32,6 +32,7 @@
 .comentario{
     margin-top: 8px;
     margin-bottom: 8px;
+    height: 25px;
     width: 205px;
 }
 

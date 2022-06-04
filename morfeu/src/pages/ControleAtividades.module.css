@@ -13,8 +13,8 @@
     justify-content: center;
     margin-top: 10px;
     background-color: rgb(42, 165, 149);
-    height: 420px;
-    width: 88vw;
+    height: 320px;
+    width: 70vw;
     border: 3px solid gold;
 
 }
@@ -32,7 +32,7 @@
 
 .btn_add_div{
     display: flex;
-    margin-top: 70px;
+    margin-top: 35px;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 180px;
