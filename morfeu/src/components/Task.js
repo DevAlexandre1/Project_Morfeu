@@ -92,10 +92,29 @@ const Task = (props) => {
       function start5() {
         cron5 = setInterval(() => { timer5(); }, tempo);
       }
+
       //Para o temporizador mas não limpa as variáveis
-      function pause() {
+      function pause0() {
+        console.log("Chamei o parar")
           clearInterval(cron0);
+      
       }
+      function pause1() {
+        clearInterval(cron1);
+      }
+      function pause2() {
+      clearInterval(cron2);
+      }
+      function pause3() {
+      clearInterval(cron3);
+      }
+      function pause4() {
+        clearInterval(cron4);
+      }
+      function pause5() {
+        clearInterval(cron5);
+      }
+
       
       //Para o temporizador e limpa as variáveis
       function stop() {
@@ -256,29 +275,29 @@ const Task = (props) => {
       
         
         //Stylos task active
-        const tastStyle = document.querySelector("#tarefa_container")
+        const taskStyle = document.querySelector("#tarefa_container")
         function btnIniciarStylo0(){
-          tastStyle.childNodes[0].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[0].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar0").disabled = true
         }
         function btnIniciarStylo1(){
-          tastStyle.childNodes[1].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[1].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar1").disabled = true
         }
         function btnIniciarStylo2(){
-          tastStyle.childNodes[2].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[2].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar2").disabled = true
         }
         function btnIniciarStylo3(){
-          tastStyle.childNodes[3].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[3].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar3").disabled = true
         }
         function btnIniciarStylo4(){
-          tastStyle.childNodes[4].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[4].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar4").disabled = true
         }
         function btnIniciarStylo5(){
-          tastStyle.childNodes[5].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[5].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar5").disabled = true
         }
         
@@ -472,15 +491,65 @@ const Task = (props) => {
    
       //BOTAO PARAR
     const handleBtnParar =(e)=>{
-           //#### VERIFICAR QUANTIDADE DE TAREFAS 
-        // const quantidadeTarefas = document.querySelectorAll("#tarefa_container div")
-        // const qtdTask = quantidadeTarefas.length  
-
-        // const getValor = document.querySelectorAll("#div_task select")
-
+           
+          const taskStyleParar = document.querySelector("#tarefa_container")
+          function btnPararStylo0(){
+            taskStyleParar.childNodes[0].style.backgroundColor = "rgb(252, 191, 191)"
+            document.querySelector("#btnParar0").disabled = true
+            document.querySelector("#btnIniciar0").disabled = false
+          }
+          // function btnPararStylo1(){
+          //   taskStyleParar.childNodes[1].style.backgroundColor = "rgb(218, 253, 218)"
+          //   document.querySelector("#btnParar1").disabled = true
+          //   document.querySelector("#btnIniciar1").disabled = false
+          // }
+          // function btnPararStylo2(){
+          //   taskStyleParar.childNodes[2].style.backgroundColor = "rgb(218, 253, 218)"
+          //   document.querySelector("#btnParar2").disabled = true
+          //   document.querySelector("#btnIniciar2").disabled = false
+          // }
+          // function btnPararStylo3(){
+          //   taskStyleParar.childNodes[3].style.backgroundColor = "rgb(218, 253, 218)"
+          //   document.querySelector("#btnParar3").disabled = true
+          //   document.querySelector("#btnIniciar3").disabled = false
+          // }
+          // function btnPararStylo4(){
+          //   taskStyleParar.childNodes[4].style.backgroundColor = "rgb(218, 253, 218)"
+          //   document.querySelector("#btnParar4").disabled = true
+          //   document.querySelector("#btnIniciar4").disabled = false
+          // }
+          // function btnPararStylo5(){
+          //   taskStyleParar.childNodes[5].style.backgroundColor = "rgb(218, 253, 218)"
+          //   document.querySelector("#btnParar5").disabled = true
+          //   document.querySelector("#btnIniciar5").disabled = false
+          // }
+     
+    
+       
+        const btnParar0 = "btnParar0"
+        // const btnParar1 = "btnParar1"
+        // const btnParar2 = "btnParar2"
+        // const btnParar3 = "btnParar3"
+        // const btnParar4 = "btnParar4"
+        // const btnParar5 = "btnParar5"
+      
+      
+     
+        const btnVerification = (e.target.id)        
+      
+          switch (btnVerification){
+                    
+                    case (btnParar0): 
+                        console.log("Entrou no case")
+                        pause0()
+                        btnPararStylo0()
+                      
+                    break;
+                    default:
+                      console.log("Não passou pelo switch do pause")
     
     }
-
+  }
        //BOTAO GRAVAR 
     const handleBtnGravar =(e)=>{
         setBtnGravar(!btnGravar)
