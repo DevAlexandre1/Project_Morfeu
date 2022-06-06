@@ -66,53 +66,75 @@ const Task = (props) => {
       var ss = 0;
       
       var tempo = 1000;//Quantos milésimos valem 1 segundo?
-      var cron0;
-      var cron1;
-      var cron2;
-      var cron3;
-      var cron4;
-      var cron5;
+      const [cron0, setCron0] = useState(0)
+      const [cron1, setCron1] = useState(0)
+      const [cron2, setCron2] = useState(0)
+      const [cron3, setCron3] = useState(0)
+      const [cron4, setCron4] = useState(0)
+      const [cron5, setCron5] = useState(0)
+      
+      //VARIAVEIS TEMPORARIAS
+      const [cronTemp0, setCronTemp0] = useState(0)
+      const [cronTemp1, setCronTemp1] = useState(0)
+      const [cronTemp2, setCronTemp2] = useState(0)
+      const [cronTemp3, setCronTemp3] = useState(0)
+      const [cronTemp4, setCronTemp4] = useState(0)
+      const [cronTemp5, setCronTemp5] = useState(0)
+
       
       //Inicia o temporizador
       function start0() {
-          cron0 = setInterval(() => { timer0(); }, tempo);
+          // cron0 = setInterval(() => { timer0(); }, tempo);
+          setCron0(setInterval(() => { timer0(); }, tempo))
       }
       function start1() {
-          cron1 = setInterval(() => { timer1(); }, tempo);
+          // cron1 = setInterval(() => { timer1(); }, tempo);
+          setCron1(setInterval(() => { timer1(); }, tempo))
+
       }
       function start2() {
-        cron2 = setInterval(() => { timer2(); }, tempo);
+        // cron2 = setInterval(() => { timer2(); }, tempo);
+        setCron2(setInterval(() => { timer2(); }, tempo))
       }
       function start3() {
-        cron3 = setInterval(() => { timer3(); }, tempo);
+        // cron3 = setInterval(() => { timer3(); }, tempo);
+        setCron3(setInterval(() => { timer3(); }, tempo))
       }
       function start4() {
-        cron4 = setInterval(() => { timer4(); }, tempo);
+        // cron4 = setInterval(() => { timer4(); }, tempo);
+        setCron4(setInterval(() => { timer4(); }, tempo))
       }
       function start5() {
-        cron5 = setInterval(() => { timer5(); }, tempo);
+        // cron5 = setInterval(() => { timer5(); }, tempo);
+        setCron5(setInterval(() => { timer5(); }, tempo))
       }
 
       //Para o temporizador mas não limpa as variáveis
       function pause0() {
         console.log("Chamei o parar")
-          clearInterval(cron0);
+          // clearInterval(cron0);
+          setCron0(clearInterval(cron0))
       
       }
-      function pause1() {
-        clearInterval(cron1);
+      function pause1() {      
+        // clearInterval(cron1);
+        setCron1(clearInterval(cron1))        
       }
       function pause2() {
-      clearInterval(cron2);
+      // clearInterval(cron2);
+      setCron2(clearInterval(cron2))
       }
       function pause3() {
-      clearInterval(cron3);
+      // clearInterval(cron3);
+      setCron3(clearInterval(cron3))
       }
       function pause4() {
-        clearInterval(cron4);
+        // clearInterval(cron4);
+        setCron4(clearInterval(cron4))
       }
       function pause5() {
-        clearInterval(cron5);
+        // clearInterval(cron5);
+        setCron5(clearInterval(cron5))
       }
 
       
@@ -279,26 +301,32 @@ const Task = (props) => {
         function btnIniciarStylo0(){
           taskStyle.childNodes[0].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar0").disabled = true
+          document.querySelector("#btnParar0").disabled = false
         }
         function btnIniciarStylo1(){
           taskStyle.childNodes[1].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar1").disabled = true
+           document.querySelector("#btnParar1").disabled = false
         }
         function btnIniciarStylo2(){
           taskStyle.childNodes[2].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar2").disabled = true
+           document.querySelector("#btnParar2").disabled = false
         }
         function btnIniciarStylo3(){
           taskStyle.childNodes[3].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar3").disabled = true
+           document.querySelector("#btnParar3").disabled = false
         }
         function btnIniciarStylo4(){
           taskStyle.childNodes[4].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar4").disabled = true
+           document.querySelector("#btnParar4").disabled = false
         }
         function btnIniciarStylo5(){
           taskStyle.childNodes[5].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar5").disabled = true
+           document.querySelector("#btnParar5").disabled = false
         }
         
         //Get Select task
@@ -494,44 +522,44 @@ const Task = (props) => {
            
           const taskStyleParar = document.querySelector("#tarefa_container")
           function btnPararStylo0(){
-            taskStyleParar.childNodes[0].style.backgroundColor = "rgb(252, 191, 191)"
+            taskStyleParar.childNodes[0].style.backgroundColor = "rgb(255, 125, 125)"
             document.querySelector("#btnParar0").disabled = true
             document.querySelector("#btnIniciar0").disabled = false
           }
-          // function btnPararStylo1(){
-          //   taskStyleParar.childNodes[1].style.backgroundColor = "rgb(218, 253, 218)"
-          //   document.querySelector("#btnParar1").disabled = true
-          //   document.querySelector("#btnIniciar1").disabled = false
-          // }
-          // function btnPararStylo2(){
-          //   taskStyleParar.childNodes[2].style.backgroundColor = "rgb(218, 253, 218)"
-          //   document.querySelector("#btnParar2").disabled = true
-          //   document.querySelector("#btnIniciar2").disabled = false
-          // }
-          // function btnPararStylo3(){
-          //   taskStyleParar.childNodes[3].style.backgroundColor = "rgb(218, 253, 218)"
-          //   document.querySelector("#btnParar3").disabled = true
-          //   document.querySelector("#btnIniciar3").disabled = false
-          // }
-          // function btnPararStylo4(){
-          //   taskStyleParar.childNodes[4].style.backgroundColor = "rgb(218, 253, 218)"
-          //   document.querySelector("#btnParar4").disabled = true
-          //   document.querySelector("#btnIniciar4").disabled = false
-          // }
-          // function btnPararStylo5(){
-          //   taskStyleParar.childNodes[5].style.backgroundColor = "rgb(218, 253, 218)"
-          //   document.querySelector("#btnParar5").disabled = true
-          //   document.querySelector("#btnIniciar5").disabled = false
-          // }
+          function btnPararStylo1(){
+            taskStyleParar.childNodes[1].style.backgroundColor = "rgb(255, 125, 125)"
+            document.querySelector("#btnParar1").disabled = true
+            document.querySelector("#btnIniciar1").disabled = false
+          }
+          function btnPararStylo2(){
+            taskStyleParar.childNodes[2].style.backgroundColor = " rgb(255, 125, 125)"
+            document.querySelector("#btnParar2").disabled = true
+            document.querySelector("#btnIniciar2").disabled = false
+          }
+          function btnPararStylo3(){
+            taskStyleParar.childNodes[3].style.backgroundColor = "rgb(255, 125, 125)"
+            document.querySelector("#btnParar3").disabled = true
+            document.querySelector("#btnIniciar3").disabled = false
+          }
+          function btnPararStylo4(){
+            taskStyleParar.childNodes[4].style.backgroundColor = "rgb(255, 125, 125)"
+            document.querySelector("#btnParar4").disabled = true
+            document.querySelector("#btnIniciar4").disabled = false
+          }
+          function btnPararStylo5(){
+            taskStyleParar.childNodes[5].style.backgroundColor = "rgb(255, 125, 125)"
+            document.querySelector("#btnParar5").disabled = true
+            document.querySelector("#btnIniciar5").disabled = false
+          }
      
     
        
         const btnParar0 = "btnParar0"
-        // const btnParar1 = "btnParar1"
-        // const btnParar2 = "btnParar2"
-        // const btnParar3 = "btnParar3"
-        // const btnParar4 = "btnParar4"
-        // const btnParar5 = "btnParar5"
+        const btnParar1 = "btnParar1"
+        const btnParar2 = "btnParar2"
+        const btnParar3 = "btnParar3"
+        const btnParar4 = "btnParar4"
+        const btnParar5 = "btnParar5"
       
       
      
@@ -545,6 +573,37 @@ const Task = (props) => {
                         btnPararStylo0()
                       
                     break;
+                    case (btnParar1): 
+                        console.log("Entrou no case")
+                        pause1()
+                        btnPararStylo1()
+                      
+                    break;
+                    case (btnParar2): 
+                        console.log("Entrou no case")
+                        pause2()
+                        btnPararStylo2()
+                      
+                    break;
+                    case (btnParar3): 
+                        console.log("Entrou no case")
+                        pause3()
+                        btnPararStylo3()
+                      
+                    break;
+                    case (btnParar4): 
+                        console.log("Entrou no case")
+                        pause4()
+                        btnPararStylo4()
+                      
+                    break;
+                    case (btnParar5): 
+                        console.log("Entrou no case")
+                        pause5()
+                        btnPararStylo5()
+                      
+                    break;
+
                     default:
                       console.log("Não passou pelo switch do pause")
     

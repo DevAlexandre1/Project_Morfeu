@@ -10,8 +10,8 @@
     width: 220px;
     height: 320px;
     background-color: rgb(253,239,193);
-    margin: 10px;
     border: 1px solid rgb(255, 251, 0);
+    margin: 10px;
     border-radius: 15px;
     text-align: center;
     padding: 3px;
@@ -69,6 +69,11 @@
     border: 2px solid red;
     font-size: 17px;
     cursor: pointer;
+}
+
+.btnParar:active{
+    background-color: red;
+
 }
 .btnGravar{
     margin-top: 4px;
