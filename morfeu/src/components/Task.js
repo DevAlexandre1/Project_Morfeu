@@ -84,28 +84,38 @@ const Task = (props) => {
       
       //Inicia o temporizador
       function start0() {
-          // cron0 = setInterval(() => { timer0(); }, tempo);
+        //INICIANDO O CRONOMETRO COM O TEMPO ANTES DE PARAR
+        //TROCAR A VARIÁVEL TIME PELO SEGUNDOS ENTRE INICIO E PARADA
+        var hours = Math.floor( cronTemp0 / 3600 );
+        var minutes = Math.floor( (cronTemp0 % 3600) / 60 );
+        var seconds = cronTemp0 % 60;
+                 
+        hh = hours
+        mm = minutes
+        ss = seconds
+          
+
           setCron0(setInterval(() => { timer0(); }, tempo))
       }
       function start1() {
-          // cron1 = setInterval(() => { timer1(); }, tempo);
+          
           setCron1(setInterval(() => { timer1(); }, tempo))
 
       }
       function start2() {
-        // cron2 = setInterval(() => { timer2(); }, tempo);
+        
         setCron2(setInterval(() => { timer2(); }, tempo))
       }
       function start3() {
-        // cron3 = setInterval(() => { timer3(); }, tempo);
+        
         setCron3(setInterval(() => { timer3(); }, tempo))
       }
       function start4() {
-        // cron4 = setInterval(() => { timer4(); }, tempo);
+        
         setCron4(setInterval(() => { timer4(); }, tempo))
       }
       function start5() {
-        // cron5 = setInterval(() => { timer5(); }, tempo);
+        
         setCron5(setInterval(() => { timer5(); }, tempo))
       }
 
@@ -117,7 +127,7 @@ const Task = (props) => {
           console.log()
           
           setCron0(clearInterval(cron0))
-       
+          
       
       }
       function pause1() {      
@@ -165,6 +175,7 @@ const Task = (props) => {
                   hh++;//Adiciona +1 na variável hora
               }
           }
+          
       
           //Cria uma variável com o valor tratado HH:MM:SS
           var format0 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
@@ -173,6 +184,7 @@ const Task = (props) => {
           document.getElementById('cronometro0').innerText = format0;
       
           //Retorna o valor tratado
+          
           return format0;
       }
       function timer1() {
@@ -288,8 +300,9 @@ const Task = (props) => {
      //DATA ATUAL
     const dataAtual = new Date().toLocaleDateString()
 
-      //HORA ATUAL
-    const horaInicio = new Date().toLocaleTimeString()
+    //   //HORA ATUAL
+    // const horaInicio = new Date().toLocaleTimeString()
+    const horaAtual = Date.now()
     
     
       //BTN START
@@ -374,7 +387,7 @@ const Task = (props) => {
                       setData(dataAtual)
                       console.log(data)
 
-                      setHoraInicial0(horaInicio)
+                      setHoraInicial0(horaAtual)                      
                       console.log(horaInicial0)
                       start0()
                       getSelectValor[0].setAttribute("disabled","")
@@ -575,6 +588,12 @@ const Task = (props) => {
                         console.log("Entrou no case")
                         pause0()
                         btnPararStylo0()
+                        // setHoraFinal0(horaAtual)
+                        // setCronTemp0(horaFinal0 - horaInicial0)
+
+                        // console.log(horaFinal0)
+                        // console.log(horaInicial0)
+                        // console.log(cronTemp0)
                       
                     break;
                     case (btnParar1): 
