@@ -97,8 +97,9 @@ const Task = (props) => {
         // INICIANDO O CRONOMETRO COM O TEMPO ANTES DE PARAR
         // TROCAR A VARIÁVEL TIME PELO SEGUNDOS ENTRE INICIO E PARADA
         
-        //let valor = Math.floor( timeResultado0 / 1000);
-        let valor =  timeResultado0 / 1000
+        let valor = Math.floor( timeResultado0 / 1000);
+        console.log(valor)
+        
 
         let hours = Math.floor( valor/ 3600 );
         let minutes = Math.floor( (valor % 3600) / 60 );
