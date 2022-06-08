@@ -44,4 +44,18 @@
   color: gold;
 }
 
+.drop_ferramentas{
+    padding: 24px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.drop_ferramentas:hover{
+    color: gold;
+}
 
+
+
+.link_ferramentas_down{
+    color: black;
+    text-decoration:  none;
+ }

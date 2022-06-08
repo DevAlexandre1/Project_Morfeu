@@ -12,26 +12,26 @@ const Task = (props) => {
   const [btnGravar, setBtnGravar] = useState(true);
   
     //DADOS TAREFAS
-    const [tarefa0,setTarefa0] = useState()
-    const [tarefa1,setTarefa1] = useState()
-    const [tarefa2,setTarefa2] = useState()
-    const [tarefa3,setTarefa3] = useState()
-    const [tarefa4,setTarefa4] = useState()
-    const [tarefa5,setTarefa5] = useState()
+    const [tarefa0,setTarefa0] = useState("")
+    const [tarefa1,setTarefa1] = useState("")
+    const [tarefa2,setTarefa2] = useState("")
+    const [tarefa3,setTarefa3] = useState("")
+    const [tarefa4,setTarefa4] = useState("")
+    const [tarefa5,setTarefa5] = useState("")
     
-    const [empresa0, setEmpresa0] = useState()
-    const [empresa1, setEmpresa1] = useState()
-    const [empresa2, setEmpresa2] = useState()
-    const [empresa3, setEmpresa3] = useState()
-    const [empresa4, setEmpresa4] = useState()
-    const [empresa5, setEmpresa5] = useState()
+    const [empresa0, setEmpresa0] = useState("")
+    const [empresa1, setEmpresa1] = useState("")
+    const [empresa2, setEmpresa2] = useState("")
+    const [empresa3, setEmpresa3] = useState("")
+    const [empresa4, setEmpresa4] = useState("")
+    const [empresa5, setEmpresa5] = useState("")
 
-    const [comentario0, setComentario0] = useState()
-    const [comentario1, setComentario1] = useState()
-    const [comentario2, setComentario2] = useState()
-    const [comentario3, setComentario3] = useState()
-    const [comentario4, setComentario4] = useState()
-    const [comentario5, setComentario5] = useState()
+    const [comentario0, setComentario0] = useState("")
+    const [comentario1, setComentario1] = useState("")
+    const [comentario2, setComentario2] = useState("")
+    const [comentario3, setComentario3] = useState("")
+    const [comentario4, setComentario4] = useState("")
+    const [comentario5, setComentario5] = useState("")
 
       //DATA TIME TAREFAS
     const [data, setData]= useState()
@@ -86,6 +86,7 @@ const Task = (props) => {
       function start0() {
         //INICIANDO O CRONOMETRO COM O TEMPO ANTES DE PARAR
         //TROCAR A VARIÁVEL TIME PELO SEGUNDOS ENTRE INICIO E PARADA
+        
         var hours = Math.floor( cronTemp0 / 3600 );
         var minutes = Math.floor( (cronTemp0 % 3600) / 60 );
         var seconds = cronTemp0 % 60;
@@ -365,23 +366,24 @@ const Task = (props) => {
 
         const btnVerification = (e.target.id)        
       
+        
           switch (btnVerification){
                     
                     case (btnIniciar0): 
                                      
+                      //SET VALOR TAREFA EMPRESA E COMENTARIO
                       let valor = getSelectValor[0]
                       let valSelect = valor.options[valor.selectedIndex].text
                       setTarefa0(valSelect)
-                      console.log(tarefa0)
-                      
+                      console.log(tarefa0)                      
                       let valorEmp = getSelectValor[1]
                       let valSelectEmp = valorEmp.options[valorEmp.selectedIndex].text
                       setEmpresa0(valSelectEmp)
-                      console.log(empresa0)    
-
+                      console.log(empresa0) 
                       let valorCom0 = getTextAreaValor[0].value
                       setComentario0(valorCom0) 
-                      console.log(comentario0)   
+                      console.log(comentario0)  
+                       
 
                       
                       setData(dataAtual)
@@ -531,8 +533,9 @@ const Task = (props) => {
                     default:
                       console.log("Case não funcionou")
         }
-        
+      
     }
+    
    
       //BOTAO PARAR
     const handleBtnParar =(e)=>{
