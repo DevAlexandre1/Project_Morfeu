@@ -113,7 +113,11 @@ const Task = (props) => {
       function pause0() {
         console.log("Chamei o parar")
           // clearInterval(cron0);
+          // setCronTemp0(timer0)
+          console.log()
+          
           setCron0(clearInterval(cron0))
+       
       
       }
       function pause1() {      
