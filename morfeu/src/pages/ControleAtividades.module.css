@@ -4,7 +4,8 @@
     width: 100%;
     border-top: 1px solid rgb(250,203,3);
     background-color: rgb(40, 41, 42);
-    height: 87vh;
+    
+    min-height: 87vh;
 }
 
 .container_dashboard{
@@ -62,10 +63,12 @@
 .footer{
     display: flex;    
     justify-content: center;
+    align-items: center;
     font-weight: 400;
     color: white;    
     height: 4vh;
-    height: 3vh;
+    /* height: 3vh; */
+    min-height: 25vh;
     width: 100%;
-    background-color: black;
+    background-color:rgb(33,37,41);
 }

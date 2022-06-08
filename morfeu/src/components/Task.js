@@ -1,4 +1,4 @@
-import { useState} from "react"
+import { useEffect, useState} from "react"
 import styles from './Task.module.css'
 
 
@@ -17,15 +17,13 @@ const Task = (props) => {
     const [tarefa2,setTarefa2] = useState("")
     const [tarefa3,setTarefa3] = useState("")
     const [tarefa4,setTarefa4] = useState("")
-    const [tarefa5,setTarefa5] = useState("")
-    
+    const [tarefa5,setTarefa5] = useState("")    
     const [empresa0, setEmpresa0] = useState("")
     const [empresa1, setEmpresa1] = useState("")
     const [empresa2, setEmpresa2] = useState("")
     const [empresa3, setEmpresa3] = useState("")
     const [empresa4, setEmpresa4] = useState("")
     const [empresa5, setEmpresa5] = useState("")
-
     const [comentario0, setComentario0] = useState("")
     const [comentario1, setComentario1] = useState("")
     const [comentario2, setComentario2] = useState("")
@@ -33,32 +31,42 @@ const Task = (props) => {
     const [comentario4, setComentario4] = useState("")
     const [comentario5, setComentario5] = useState("")
 
-      //DATA TIME TAREFAS
+    //DATA TIME TAREFAS
     const [data, setData]= useState()
 
-   
-    const [horaInicial0, setHoraInicial0] = useState()
-    const [horaInicial1, setHoraInicial1] = useState()
-    const [horaInicial2, setHoraInicial2] = useState()
-    const [horaInicial3, setHoraInicial3] = useState()
-    const [horaInicial4, setHoraInicial4] = useState()
-    const [horaInicial5, setHoraInicial5] = useState()
+    const [horaInicial0, setHoraInicial0] = useState(0)
+    const [horaInicial1, setHoraInicial1] = useState(0)
+    const [horaInicial2, setHoraInicial2] = useState(0)
+    const [horaInicial3, setHoraInicial3] = useState(0)
+    const [horaInicial4, setHoraInicial4] = useState(0)
+    const [horaInicial5, setHoraInicial5] = useState(0)    
+    const [horaFinal0, setHoraFinal0] = useState(0)
+    const [horaFinal1, setHoraFinal1] = useState(0)
+    const [horaFinal2, setHoraFinal2] = useState(0)
+    const [horaFinal3, setHoraFinal3] = useState(0)
+    const [horaFinal4, setHoraFinal4] = useState(0)
+    const [horaFinal5, setHoraFinal5] = useState(0)
+    const [timeResultado0, setTimeResultado0] = useState(0)
+    const [timeResultado1, setTimeResultado1] = useState(0)
+    const [timeResultado2, setTimeResultado2] = useState(0)
+    const [timeResultado3, setTimeResultado3] = useState(0)
+    const [timeResultado4, setTimeResultado4] = useState(0)
+    const [timeResultado5, setTimeResultado5] = useState(0)
+
     
-    const [horaFinal0, setHoraFinal0] = useState()
-    const [horaFinal1, setHoraFinal1] = useState()
-    const [horaFinal2, setHoraFinal2] = useState()
-    const [horaFinal3, setHoraFinal3] = useState()
-    const [horaFinal4, setHoraFinal4] = useState()
-    const [horaFinal5, setHoraFinal5] = useState()
+    //USE EFFECTS
+    useEffect(() =>{
+      console.log(horaInicial0)
+    }, [horaInicial0]);
+        
+    let tempoTarefa0 = 0
+    useEffect(() =>{
+       tempoTarefa0 = (horaFinal0 - horaInicial0) 
+       setTimeResultado0(timeResultado0 + tempoTarefa0)      
+    }, [horaFinal0]);
+    
+    
 
-    const [timeTarefa0, setTimeTarefa0] = useState()
-    const [timeTarefa1, setTimeTarefa1] = useState()
-    const [timeTarefa2, setTimeTarefa2] = useState()
-    const [timeTarefa3, setTimeTarefa3] = useState()
-    const [timeTarefa4, setTimeTarefa4] = useState()
-    const [timeTarefa5, setTimeTarefa5] = useState()
-
- 
       //CRONOMETRO
       
       var hh = 0;
@@ -84,13 +92,17 @@ const Task = (props) => {
       
       //Inicia o temporizador
       function start0() {
-        //INICIANDO O CRONOMETRO COM O TEMPO ANTES DE PARAR
-        //TROCAR A VARIÁVEL TIME PELO SEGUNDOS ENTRE INICIO E PARADA
+       
+      
+        // INICIANDO O CRONOMETRO COM O TEMPO ANTES DE PARAR
+        // TROCAR A VARIÁVEL TIME PELO SEGUNDOS ENTRE INICIO E PARADA
         
-        var hours = Math.floor( cronTemp0 / 3600 );
-        var minutes = Math.floor( (cronTemp0 % 3600) / 60 );
-        var seconds = cronTemp0 % 60;
-                 
+        //let valor = Math.floor( timeResultado0 / 1000);
+        let valor =  timeResultado0 / 1000
+
+        let hours = Math.floor( valor/ 3600 );
+        let minutes = Math.floor( (valor % 3600) / 60 );
+        let seconds = valor % 60;     
         hh = hours
         mm = minutes
         ss = seconds
@@ -122,12 +134,10 @@ const Task = (props) => {
 
       //Para o temporizador mas não limpa as variáveis
       function pause0() {
-        console.log("Chamei o parar")
-          // clearInterval(cron0);
+           // clearInterval(cron0);
           // setCronTemp0(timer0)
-          console.log()
-          
-          setCron0(clearInterval(cron0))
+        
+         setCron0(clearInterval(cron0))
           
       
       }
@@ -227,7 +237,7 @@ const Task = (props) => {
       var format2 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
       
       //Insere o valor tratado no elemento counter
-      document.getElementById('cronometro2').innerText = format2;
+      document.getElementById('cronometro2').innerText =  format2;
   
       //Retorna o valor tratado
       return format2;
@@ -303,7 +313,7 @@ const Task = (props) => {
 
     //   //HORA ATUAL
     // const horaInicio = new Date().toLocaleTimeString()
-    const horaAtual = Date.now()
+ 
     
     
       //BTN START
@@ -352,7 +362,7 @@ const Task = (props) => {
         //Get TextArea task
         const getTextAreaValor = document.querySelectorAll("#div_task textarea")
         
-       
+        
         const btnIniciar0 = "btnIniciar0"
         const btnIniciar1 = "btnIniciar1"
         const btnIniciar2 = "btnIniciar2"
@@ -370,35 +380,35 @@ const Task = (props) => {
           switch (btnVerification){
                     
                     case (btnIniciar0): 
-                                     
+                       
+                    
                       //SET VALOR TAREFA EMPRESA E COMENTARIO
                       let valor = getSelectValor[0]
                       let valSelect = valor.options[valor.selectedIndex].text
                       setTarefa0(valSelect)
-                      console.log(tarefa0)                      
+                                          
                       let valorEmp = getSelectValor[1]
                       let valSelectEmp = valorEmp.options[valorEmp.selectedIndex].text
                       setEmpresa0(valSelectEmp)
-                      console.log(empresa0) 
+                      
                       let valorCom0 = getTextAreaValor[0].value
                       setComentario0(valorCom0) 
-                      console.log(comentario0)  
-                       
-
-                      
+                                            
                       setData(dataAtual)
-                      console.log(data)
-
-                      setHoraInicial0(horaAtual)                      
-                      console.log(horaInicial0)
+                      setHoraInicial0(Date.now()) 
+                    
+                      
+                      
                       start0()
                       getSelectValor[0].setAttribute("disabled","")
                       getSelectValor[1].setAttribute("disabled","")
                       getTextAreaValor[0].setAttribute("disabled","")
                       btnIniciarStylo0()
                       
+                    
+                        
                     break;
-        
+                  
                     case (btnIniciar1):
                        //Set val task
                        let valor1 = getSelectValor[2]
@@ -535,7 +545,8 @@ const Task = (props) => {
         }
       
     }
-    
+    //MONITORANDO O TEMPO
+
    
       //BOTAO PARAR
     const handleBtnParar =(e)=>{
@@ -588,8 +599,9 @@ const Task = (props) => {
           switch (btnVerification){
                     
                     case (btnParar0): 
-                        console.log("Entrou no case")
+                        
                         pause0()
+                        setHoraFinal0(Date.now())                      
                         btnPararStylo0()
                         // setHoraFinal0(horaAtual)
                         // setCronTemp0(horaFinal0 - horaInicial0)
@@ -600,31 +612,26 @@ const Task = (props) => {
                       
                     break;
                     case (btnParar1): 
-                        console.log("Entrou no case")
                         pause1()
                         btnPararStylo1()
                       
                     break;
                     case (btnParar2): 
-                        console.log("Entrou no case")
                         pause2()
                         btnPararStylo2()
                       
                     break;
                     case (btnParar3): 
-                        console.log("Entrou no case")
                         pause3()
                         btnPararStylo3()
                       
                     break;
                     case (btnParar4): 
-                        console.log("Entrou no case")
                         pause4()
                         btnPararStylo4()
                       
                     break;
                     case (btnParar5): 
-                        console.log("Entrou no case")
                         pause5()
                         btnPararStylo5()
                       
@@ -635,6 +642,10 @@ const Task = (props) => {
     
     }
   }
+
+
+
+
        //BOTAO GRAVAR 
     const handleBtnGravar =(e)=>{
         setBtnGravar(!btnGravar)
