@@ -24,16 +24,17 @@ const Task = (props) => {
     const [empresa3, setEmpresa3] = useState("")
     const [empresa4, setEmpresa4] = useState("")
     const [empresa5, setEmpresa5] = useState("")
-    const [comentario0, setComentario0] = useState("")
-    const [comentario1, setComentario1] = useState("")
-    const [comentario2, setComentario2] = useState("")
-    const [comentario3, setComentario3] = useState("")
-    const [comentario4, setComentario4] = useState("")
-    const [comentario5, setComentario5] = useState("")
+    const [comentario0, setComentario0] = useState("Vazio")
+    const [comentario1, setComentario1] = useState("Vazio")
+    const [comentario2, setComentario2] = useState("Vazio")
+    const [comentario3, setComentario3] = useState("Vazio")
+    const [comentario4, setComentario4] = useState("Vazio")
+    const [comentario5, setComentario5] = useState("Vazio")
 
     //DATA TIME TAREFAS
     const [data, setData]= useState()
 
+    //HORA INICIO, FIM E TEMPO TOTAL DA TAREFA
     const [horaInicial0, setHoraInicial0] = useState(0)
     const [horaInicial1, setHoraInicial1] = useState(0)
     const [horaInicial2, setHoraInicial2] = useState(0)
@@ -52,8 +53,9 @@ const Task = (props) => {
     const [timeResultado3, setTimeResultado3] = useState(0)
     const [timeResultado4, setTimeResultado4] = useState(0)
     const [timeResultado5, setTimeResultado5] = useState(0)
-
     
+  
+
     //USE EFFECTS
     let tempoTarefa0 = 0
     useEffect(() =>{
@@ -103,16 +105,7 @@ const Task = (props) => {
       const [cron3, setCron3] = useState(0)
       const [cron4, setCron4] = useState(0)
       const [cron5, setCron5] = useState(0)
-      
-      //VARIAVEIS TEMPORARIAS
-      const [cronTemp0, setCronTemp0] = useState(0)
-      const [cronTemp1, setCronTemp1] = useState(0)
-      const [cronTemp2, setCronTemp2] = useState(0)
-      const [cronTemp3, setCronTemp3] = useState(0)
-      const [cronTemp4, setCronTemp4] = useState(0)
-      const [cronTemp5, setCronTemp5] = useState(0)
-
-      
+           
       //Inicia o temporizador
       function start0() {
        //INICIANDO O CRONOMETRO DE ONDE PAROU        
@@ -176,7 +169,7 @@ const Task = (props) => {
         setCron5(setInterval(() => { timer5(); }, tempo))
       }
 
-      //Para o temporizador mas não limpa as variáveis
+      //PARAR O CRONOMETRO
       function pause0() {          
          setCron0(clearInterval(cron0))
       }
@@ -197,7 +190,7 @@ const Task = (props) => {
       }
 
       //Para o temporizador e limpa as variáveis
-      function stop() {
+      function stop0() {
           clearInterval(cron0);
           hh = 0;
           mm = 0;
@@ -205,70 +198,109 @@ const Task = (props) => {
       
           document.getElementById('cronometro0').innerText = '00:00:00';
       }
+      function stop1() {
+        clearInterval(cron1);
+        hh = 0;
+        mm = 0;
+        ss = 0;
+    
+      document.getElementById('cronometro1').innerText = '00:00:00';
+      }
+      function stop2() {
+        clearInterval(cron2);
+        hh = 0;
+        mm = 0;
+        ss = 0;
+    
+        document.getElementById('cronometro2').innerText = '00:00:00';
+      }
+      function stop3() {
+        clearInterval(cron3);
+        hh = 0;
+        mm = 0;
+        ss = 0;
+
+        document.getElementById('cronometro3').innerText = '00:00:00';
+      }
+      function stop4() {
+        clearInterval(cron4);
+        hh = 0;
+        mm = 0;
+        ss = 0;
+
+          document.getElementById('cronometro4').innerText = '00:00:00';
+        }
+        function stop5() {
+          clearInterval(cron5);
+          hh = 0;
+          mm = 0;
+          ss = 0;
+  
+            document.getElementById('cronometro5').innerText = '00:00:00';
+        }
       
       //Faz a contagem do tempo e exibição
       function timer0() {
-          ss++; //Incrementa +1 na variável ss
-      
+          ss++; //Incrementa +1 na variável ss      
+          
           if (ss == 59) { //Verifica se deu 59 segundos
               ss = 0; //Volta os segundos para 0
-              mm++; //Adiciona +1 na variável mm
-      
+              mm++; //Adiciona +1 na variável mm      
+
               if (mm == 59) { //Verifica se deu 59 minutos
                   mm = 0;//Volta os minutos para 0
                   hh++;//Adiciona +1 na variável hora
               }
           }               
           //Cria uma variável com o valor tratado HH:MM:SS
-          var format0 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
-          
+          var format0 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);    
+
           //Insere o valor tratado no elemento counter
-          document.getElementById('cronometro0').innerText = format0;
-      
-          //Retorna o valor tratado
-          
+          document.getElementById('cronometro0').innerText = format0;      
+          //Retorna o valor tratado    
+
           return format0;
       }
       function timer1() {
-        ss++; //Incrementa +1 na variável ss
-    
+        ss++; //Incrementa +1 na variável ss 
+           
         if (ss == 59) { //Verifica se deu 59 segundos
             ss = 0; //Volta os segundos para 0
-            mm++; //Adiciona +1 na variável mm
-    
+            mm++; //Adiciona +1 na variável mm  
+
             if (mm == 59) { //Verifica se deu 59 minutos
                 mm = 0;//Volta os minutos para 0
                 hh++;//Adiciona +1 na variável hora
             }
         }    
         //Cria uma variável com o valor tratado HH:MM:SS
-        var format1 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
-        
+        var format1 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);    
+
         //Insere o valor tratado no elemento counter
-        document.getElementById('cronometro1').innerText = format1;
-    
+        document.getElementById('cronometro1').innerText = format1;   
+
         //Retorna o valor tratado
         return format1;
     }
     function timer2() {
-      ss++; //Incrementa +1 na variável ss
-  
+      ss++; //Incrementa +1 na variável ss  
+
       if (ss == 59) { //Verifica se deu 59 segundos
           ss = 0; //Volta os segundos para 0
-          mm++; //Adiciona +1 na variável mm
-  
+          mm++; //Adiciona +1 na variável mm  
+
           if (mm == 59) { //Verifica se deu 59 minutos
               mm = 0;//Volta os minutos para 0
               hh++;//Adiciona +1 na variável hora
           }
-      }
-  
+      }  
+
       //Cria uma variável com o valor tratado HH:MM:SS
-      var format2 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
-      
+      var format2 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss); 
+
       //Insere o valor tratado no elemento counter
-      document.getElementById('cronometro2').innerText =  format2;
-  
+      document.getElementById('cronometro2').innerText =  format2;  
+
       //Retorna o valor tratado
       return format2;
      }
@@ -286,8 +318,8 @@ const Task = (props) => {
         }
 
         //Cria uma variável com o valor tratado HH:MM:SS
-        var format3 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
-        
+        var format3 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);   
+
         //Insere o valor tratado no elemento counter
         document.getElementById('cronometro3').innerText = format3;
 
@@ -308,8 +340,8 @@ const Task = (props) => {
       }
 
       //Cria uma variável com o valor tratado HH:MM:SS
-      var format4 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
-      
+      var format4 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);      
+
       //Insere o valor tratado no elemento counter
       document.getElementById('cronometro4').innerText = format4;
 
@@ -330,8 +362,8 @@ const Task = (props) => {
       }
 
       //Cria uma variável com o valor tratado HH:MM:SS
-      var format5 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
-      
+      var format5 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);  
+
       //Insere o valor tratado no elemento counter
       document.getElementById('cronometro5').innerText = format5;
 
@@ -339,79 +371,67 @@ const Task = (props) => {
       return format5;
     }
      //DATA ATUAL
-    const dataAtual = new Date().toLocaleDateString()
+    const dataAtual = new Date().toLocaleDateString() 
 
-    //   //HORA ATUAL
-    // const horaInicio = new Date().toLocaleTimeString()
- 
-    
-    
       //BTN START
-      const handleIniciar =(e)=>{
-
-         //#### VERIFICAR QUANTIDADE DE TAREFAS 
-        // const quantidadeTarefas = document.querySelectorAll("#tarefa_container div")
-        // const qtdTask = quantidadeTarefas.length  
       
+      const handleIniciar =(e)=>{
         
         //Stylos task active
         const taskStyle = document.querySelector("#tarefa_container")
         function btnIniciarStylo0(){
           taskStyle.childNodes[0].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar0").disabled = true
-          document.querySelector("#btnParar0").disabled = false
+          document.querySelector("#btnParar0").disabled = false    
+          document.querySelector("#btnGravar0").disabled = true
         }
         function btnIniciarStylo1(){
           taskStyle.childNodes[1].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar1").disabled = true
            document.querySelector("#btnParar1").disabled = false
+           document.querySelector("#btnGravar1").disabled = true
         }
         function btnIniciarStylo2(){
           taskStyle.childNodes[2].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar2").disabled = true
            document.querySelector("#btnParar2").disabled = false
+           document.querySelector("#btnGravar2").disabled = true
         }
         function btnIniciarStylo3(){
           taskStyle.childNodes[3].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar3").disabled = true
            document.querySelector("#btnParar3").disabled = false
+           document.querySelector("#btnGravar3").disabled = true
         }
         function btnIniciarStylo4(){
           taskStyle.childNodes[4].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar4").disabled = true
            document.querySelector("#btnParar4").disabled = false
+           document.querySelector("#btnGravar4").disabled = true
         }
         function btnIniciarStylo5(){
           taskStyle.childNodes[5].style.backgroundColor = "rgb(218, 253, 218)"
           document.querySelector("#btnIniciar5").disabled = true
            document.querySelector("#btnParar5").disabled = false
+           document.querySelector("#btnGravar5").disabled = true
         }
         
         //Get Select task
         const getSelectValor = document.querySelectorAll("#div_task select")
         //Get TextArea task
         const getTextAreaValor = document.querySelectorAll("#div_task textarea")
-        
-        
+                
         const btnIniciar0 = "btnIniciar0"
         const btnIniciar1 = "btnIniciar1"
         const btnIniciar2 = "btnIniciar2"
         const btnIniciar3 = "btnIniciar3"
         const btnIniciar4 = "btnIniciar4"
         const btnIniciar5 = "btnIniciar5"
-        
-        //teste
-        // const cronometro = document.querySelector("#cronometro0")
-        // cronometro.innerHTML = "oii"
 
         const btnVerification = (e.target.id)        
-      
-        
-          switch (btnVerification){
-                    
-                    case (btnIniciar0): 
-                       
-                    
+              
+          switch (btnVerification){                    
+                    case (btnIniciar0):      
                       //SET VALOR TAREFA EMPRESA E COMENTARIO
                       let valor = getSelectValor[0]
                       let valSelect = valor.options[valor.selectedIndex].text
@@ -428,21 +448,17 @@ const Task = (props) => {
                       getSelectValor[0].setAttribute("disabled","")
                       getSelectValor[1].setAttribute("disabled","")
                       getTextAreaValor[0].setAttribute("disabled","")
-                      btnIniciarStylo0()
-                                              
-                    break;
-                  
+                      btnIniciarStylo0()                                              
+                    break;                  
                     case (btnIniciar1):
                        let valor1 = getSelectValor[2]
                        let valSelect1 = valor1.options[valor1.selectedIndex].text
                        setTarefa1(valSelect1)  
                        let valorEmp1 = getSelectValor[3]
                        let valSelectEmp1 = valorEmp1.options[valorEmp1.selectedIndex].text
-                       setEmpresa1(valSelectEmp1)
-                       console.log(empresa1)   
+                       setEmpresa1(valSelectEmp1)                         
                        let valorCom1 = getTextAreaValor[1].value
-                       setComentario1(valorCom1) 
-                       console.log(comentario1)   
+                       setComentario1(valorCom1)                        
 
                        setData(dataAtual)
                        setHoraInicial1(Date.now())
@@ -451,8 +467,7 @@ const Task = (props) => {
                        getSelectValor[3].setAttribute("disabled","")
                        getTextAreaValor[1].setAttribute("disabled","")
                        btnIniciarStylo1()
-                    break;
-        
+                    break;        
                     case (btnIniciar2):
                       let valor2 = getSelectValor[4]
                       let valSelect2 = valor2.options[valor2.selectedIndex].text
@@ -470,8 +485,7 @@ const Task = (props) => {
                       getSelectValor[5].setAttribute("disabled","")
                       getTextAreaValor[2].setAttribute("disabled","")
                       btnIniciarStylo2()
-                    break;
-        
+                    break;        
                     case (btnIniciar3):
                       let valor3 = getSelectValor[6]
                       let valSelect3 = valor3.options[valor3.selectedIndex].text
@@ -489,8 +503,7 @@ const Task = (props) => {
                       getSelectValor[7].setAttribute("disabled","")
                       getTextAreaValor[3].setAttribute("disabled","")
                       btnIniciarStylo3()
-                    break;
-        
+                    break;        
                     case (btnIniciar4):
                        let valor4 = getSelectValor[8]
                        let valSelect4 = valor4.options[valor4.selectedIndex].text
@@ -508,8 +521,7 @@ const Task = (props) => {
                        getSelectValor[9].setAttribute("disabled","")
                        getTextAreaValor[4].setAttribute("disabled","")
                        btnIniciarStylo4()
-                     break;
-        
+                     break;        
                     case (btnIniciar5):
                        let valor5 = getSelectValor[10]
                        let valSelect5 = valor5.options[valor5.selectedIndex].text
@@ -531,59 +543,56 @@ const Task = (props) => {
                     default:
                       console.log("Case não funcionou")
         }
-      
-    }
-      
+    }      
     //BOTAO PARAR
-    const handleBtnParar =(e)=>{
-           
+    const handleBtnParar =(e)=>{           
           const taskStyleParar = document.querySelector("#tarefa_container")
           function btnPararStylo0(){
             taskStyleParar.childNodes[0].style.backgroundColor = "rgb(255, 125, 125)"
             document.querySelector("#btnParar0").disabled = true
             document.querySelector("#btnIniciar0").disabled = false
+            document.querySelector("#btnGravar0").disabled = false
           }
           function btnPararStylo1(){
             taskStyleParar.childNodes[1].style.backgroundColor = "rgb(255, 125, 125)"
             document.querySelector("#btnParar1").disabled = true
             document.querySelector("#btnIniciar1").disabled = false
+            document.querySelector("#btnGravar1").disabled = false
           }
           function btnPararStylo2(){
             taskStyleParar.childNodes[2].style.backgroundColor = " rgb(255, 125, 125)"
             document.querySelector("#btnParar2").disabled = true
             document.querySelector("#btnIniciar2").disabled = false
+            document.querySelector("#btnGravar2").disabled = false
           }
           function btnPararStylo3(){
             taskStyleParar.childNodes[3].style.backgroundColor = "rgb(255, 125, 125)"
             document.querySelector("#btnParar3").disabled = true
             document.querySelector("#btnIniciar3").disabled = false
+            document.querySelector("#btnGravar3").disabled = false
           }
           function btnPararStylo4(){
             taskStyleParar.childNodes[4].style.backgroundColor = "rgb(255, 125, 125)"
             document.querySelector("#btnParar4").disabled = true
             document.querySelector("#btnIniciar4").disabled = false
+            document.querySelector("#btnGravar4").disabled = false
           }
           function btnPararStylo5(){
             taskStyleParar.childNodes[5].style.backgroundColor = "rgb(255, 125, 125)"
             document.querySelector("#btnParar5").disabled = true
             document.querySelector("#btnIniciar5").disabled = false
-          }
-     
-    
-       
+            document.querySelector("#btnGravar5").disabled = false
+            
+          }     
         const btnParar0 = "btnParar0"
         const btnParar1 = "btnParar1"
         const btnParar2 = "btnParar2"
         const btnParar3 = "btnParar3"
         const btnParar4 = "btnParar4"
         const btnParar5 = "btnParar5"
-      
-      
      
-        const btnVerification = (e.target.id)        
-      
-          switch (btnVerification){
-                    
+        const btnVerification = (e.target.id)     
+          switch (btnVerification){                    
                     case (btnParar0): 
                         pause0()
                         setHoraFinal0(Date.now())                      
@@ -614,22 +623,91 @@ const Task = (props) => {
                         setHoraFinal5(Date.now())    
                         btnPararStylo5()
                     break;
-
                     default:
-                      console.log("Não passou pelo switch do pause")
-    
+                      console.log("Não passou pelo switch do pause")    
     }
   }
-
-       //BOTAO GRAVAR 
+   //BOTAO GRAVAR 
     const handleBtnGravar =(e)=>{
-        setBtnGravar(!btnGravar)
-        
-        console.log("Iniciou?",btnIniciar)
-        console.log("Parou?",btnParar)
-        console.log("Gravou?",btnGravar)
-    }
+      const taskStyleGravar = document.querySelector("#tarefa_container")
+      function btnGravarStyle0(){
+        taskStyleGravar.childNodes[0].style.backgroundColor = "rgb(253,239,193)"
+        document.querySelector("#btnParar0").disabled = false
+        document.querySelector("#btnIniciar0").disabled = false
+      }
+      function btnGravarStyle1(){
+        taskStyleGravar.childNodes[1].style.backgroundColor = "rgb(253,239,193)"
+        document.querySelector("#btnParar1").disabled = false
+        document.querySelector("#btnIniciar1").disabled = false
+      }
+      function btnGravarStyle2(){
+        taskStyleGravar.childNodes[2].style.backgroundColor = " rgb(253,239,193)"
+        document.querySelector("#btnParar2").disabled = false
+        document.querySelector("#btnIniciar2").disabled = false
+      }
+      function btnGravarStyle3(){
+        taskStyleGravar.childNodes[3].style.backgroundColor = "rgb(253,239,193)"
+        document.querySelector("#btnParar3").disabled = false
+        document.querySelector("#btnIniciar3").disabled = false
+      }
+      function btnGravarStyle4(){
+        taskStyleGravar.childNodes[4].style.backgroundColor = "rgb(253,239,193)"
+        document.querySelector("#btnParar4").disabled = false
+        document.querySelector("#btnIniciar4").disabled = false
+      }
+      function btnGravarStyle5(){
+        taskStyleGravar.childNodes[5].style.backgroundColor = "rgb(253,239,193)"
+        document.querySelector("#btnParar5").disabled = false
+        document.querySelector("#btnIniciar5").disabled = false
+      }     
+                
+        const btnGravar0 = "btnGravar0"
+        const btnGravar1 = "btnGravar1"
+        const btnGravar2 = "btnGravar2"
+        const btnGravar3 = "btnGravar3"
+        const btnGravar4 = "btnGravar4"
+        const btnGravar5 = "btnGravar5"
 
+        const btnVerification = (e.target.id)        
+              
+          switch (btnVerification){                    
+                    case (btnGravar0):      
+                      //SET VALOR TAREFA EMPRESA E COMENTARIO
+                      
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa0 + "\nEmpresa: " + empresa0 + "\nComentario: " + comentario0 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado0)
+                        stop0()
+                        btnGravarStyle0()
+                                                    
+                    break;                  
+                    case (btnGravar1):
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa1 + "\nEmpresa: " + empresa1 + "\nComentario: " + comentario1 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado1)
+                        stop1()
+                        btnGravarStyle1()
+                    break;        
+                    case (btnGravar2):
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa2 + "\nEmpresa: " + empresa2 + "\nComentario: " + comentario2 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado2)
+                        stop2()
+                        btnGravarStyle2()
+                    break;        
+                    case (btnGravar3):
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa3 + "\nEmpresa: " + empresa3 + "\nComentario: " + comentario3 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado3)
+                        stop3()
+                        btnGravarStyle3()
+                    break;        
+                    case (btnGravar4):
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa4 + "\nEmpresa: " + empresa4 + "\nComentario: " + comentario4 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado4)
+                        stop4()
+                        btnGravarStyle4()
+                      break;        
+                    case (btnGravar5):
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa5 + "\nEmpresa: " + empresa5 + "\nComentario: " + comentario5 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado5)
+                        stop5()
+                        btnGravarStyle5()                   
+                    break;
+                    default:
+                      console.log("Case gravar não funcionou")
+        }
+    }
   
   return (
     <div id='tarefa_container'  className={styles.container_task}>        
@@ -657,7 +735,7 @@ const Task = (props) => {
                         <span>Comentario:</span>
                         <textarea className={styles.comentario} name="comentario" id="comentario" cols="17" rows="2" ></textarea>
                         <div className={styles.container_btn}>
-                            <button id={"btnIniciar" + index} className={styles.btnIniciar} onClick={handleIniciar} >Iniciar</button>
+                            <button id={"btnIniciar" + index} className={styles.btnIniciar} onClick={handleIniciar}>Iniciar</button>
                             <button id={"btnParar" + index} className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
                             <button id={"btnGravar" + index} className={styles.btnGravar} onClick={handleBtnGravar} type="submit">Gravar</button>
                         </div>
@@ -666,15 +744,9 @@ const Task = (props) => {
                         <div className={styles.container_cronometro}>
                             <h2 id={"cronometro" + index}>00:00:00</h2>
                         </div>
-                        
-                        
-                        
-              </div>
-              
-          );
-          
-      })}
-      
+              </div>              
+          );          
+      })}      
     </div>
   );
 }
