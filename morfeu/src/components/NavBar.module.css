@@ -31,17 +31,20 @@
 .nav_menu ul{
     display: flex;
     color: white;
+    
 }
 
 .links_menu{
     color: white;
     text-decoration: none;    
     font-size: 20px;
+    padding-right: 40px;    
     font-weight: 400;
 }
 
 .links_menu:hover{
   color: gold;
+  
 }
 
 .drop_ferramentas{
