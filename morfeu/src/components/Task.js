@@ -195,7 +195,7 @@ const Task = (props) => {
           hh = 0;
           mm = 0;
           ss = 0;
-      
+          setTimeResultado0(0)
           document.getElementById('cronometro0').innerText = '00:00:00';
       }
       function stop1() {
@@ -203,7 +203,7 @@ const Task = (props) => {
         hh = 0;
         mm = 0;
         ss = 0;
-    
+        setTimeResultado1(0)
       document.getElementById('cronometro1').innerText = '00:00:00';
       }
       function stop2() {
@@ -211,7 +211,7 @@ const Task = (props) => {
         hh = 0;
         mm = 0;
         ss = 0;
-    
+        setTimeResultado2(0)
         document.getElementById('cronometro2').innerText = '00:00:00';
       }
       function stop3() {
@@ -219,7 +219,7 @@ const Task = (props) => {
         hh = 0;
         mm = 0;
         ss = 0;
-
+        setTimeResultado3(0)
         document.getElementById('cronometro3').innerText = '00:00:00';
       }
       function stop4() {
@@ -227,7 +227,7 @@ const Task = (props) => {
         hh = 0;
         mm = 0;
         ss = 0;
-
+          setTimeResultado4(0)
           document.getElementById('cronometro4').innerText = '00:00:00';
         }
         function stop5() {
@@ -235,8 +235,8 @@ const Task = (props) => {
           hh = 0;
           mm = 0;
           ss = 0;
-  
-            document.getElementById('cronometro5').innerText = '00:00:00';
+          setTimeResultado5(0)
+          document.getElementById('cronometro5').innerText = '00:00:00';
         }
       
       //Faz a contagem do tempo e exibição
@@ -380,37 +380,37 @@ const Task = (props) => {
         //Stylos task active
         const taskStyle = document.querySelector("#tarefa_container")
         function btnIniciarStylo0(){
-          taskStyle.childNodes[0].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[0].style.backgroundColor = "rgb(148, 245, 148)"
           document.querySelector("#btnIniciar0").disabled = true
           document.querySelector("#btnParar0").disabled = false    
           document.querySelector("#btnGravar0").disabled = true
         }
         function btnIniciarStylo1(){
-          taskStyle.childNodes[1].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[1].style.backgroundColor = "rgb(148, 245, 148)"
           document.querySelector("#btnIniciar1").disabled = true
            document.querySelector("#btnParar1").disabled = false
            document.querySelector("#btnGravar1").disabled = true
         }
         function btnIniciarStylo2(){
-          taskStyle.childNodes[2].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[2].style.backgroundColor = "rgb(148, 245, 148)"
           document.querySelector("#btnIniciar2").disabled = true
            document.querySelector("#btnParar2").disabled = false
            document.querySelector("#btnGravar2").disabled = true
         }
         function btnIniciarStylo3(){
-          taskStyle.childNodes[3].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[3].style.backgroundColor = "rgb(148, 245, 148)"
           document.querySelector("#btnIniciar3").disabled = true
            document.querySelector("#btnParar3").disabled = false
            document.querySelector("#btnGravar3").disabled = true
         }
         function btnIniciarStylo4(){
-          taskStyle.childNodes[4].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[4].style.backgroundColor = "rgb(148, 245, 148)"
           document.querySelector("#btnIniciar4").disabled = true
            document.querySelector("#btnParar4").disabled = false
            document.querySelector("#btnGravar4").disabled = true
         }
         function btnIniciarStylo5(){
-          taskStyle.childNodes[5].style.backgroundColor = "rgb(218, 253, 218)"
+          taskStyle.childNodes[5].style.backgroundColor = "rgb(148, 245, 148)"
           document.querySelector("#btnIniciar5").disabled = true
            document.querySelector("#btnParar5").disabled = false
            document.querySelector("#btnGravar5").disabled = true
