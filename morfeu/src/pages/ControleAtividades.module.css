@@ -33,8 +33,8 @@
 
 .btn_add_div{
     display: flex;
-    margin-top: 35px;
-    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 35px;  
     flex-wrap: nowrap;
     width: 180px;
     height: 30vh;
