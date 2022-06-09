@@ -6,6 +6,10 @@ import Task from '../components/Task'
 
 const ControleAtividades = () => {
 
+  window.onbeforeunload = function(e) {
+    return 'Tem a certeza que quer fechar a janela?';
+ };
+
 const [task, setTask] = useState([
   {}]);
 
@@ -19,8 +23,8 @@ const addTask=()=>{
         <body className={styles.container}>  
             <div className={styles.btn_add_div}>
                 <button className={styles.btn_addTask} onClick={addTask} type="submit">Add task</button>     
-                <button className={styles.btn_addTask} onClick={addTask} type="submit">Start All</button>    
-                <button className={styles.btn_addTask} onClick={addTask} type="submit">Stop All</button>    
+                <button className={styles.btn_addTask}  type="submit">Start All</button>    
+                <button className={styles.btn_addTask}  type="submit">Stop All</button>    
             </div>
             <div className={styles.container_dashboard}><h1>Dashboard</h1></div>          
             <div className={styles.containerTasks}>

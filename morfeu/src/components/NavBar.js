@@ -11,10 +11,11 @@ const NavBar = () => {
         <header>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-        <img className={styles.img_home} src={ImgHome} alt="toHome" />
-        {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
+        <Link className={styles.links_menu} to="/">
+        <img className={styles.img_home} src={ImgHome} alt="toHome" />   
+        </Link>     
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Link className={styles.links_menu} to="/">Home</Link>
+            {/* <Link className={styles.links_menu} to="/">Home</Link> */}
             {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">

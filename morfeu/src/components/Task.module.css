@@ -1,9 +1,8 @@
-
-
 .container_task{
     display: flex;
     width:  100%;
     height: 400px;
+    align-items: center;
        
 }
 

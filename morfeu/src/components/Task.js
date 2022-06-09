@@ -6,11 +6,8 @@ import styles from './Task.module.css'
 const Task = (props) => {
   const {tarefas} = props;
   
-    //BOTOES
-  const [btnIniciar, setBtnIniciar] = useState(true);
-  const [btnParar, setBtnParar] = useState(true);
-  const [btnGravar, setBtnGravar] = useState(true);
   
+
     //DADOS TAREFAS
     const [tarefa0,setTarefa0] = useState("")
     const [tarefa1,setTarefa1] = useState("")
@@ -55,38 +52,32 @@ const Task = (props) => {
     const [timeResultado5, setTimeResultado5] = useState(0)
     
   
-
     //USE EFFECTS
     let tempoTarefa0 = 0
-    useEffect(() =>{
+    useEffect(() =>{      
        tempoTarefa0 = (horaFinal0 - horaInicial0) 
        setTimeResultado0(timeResultado0 + tempoTarefa0)      
     }, [horaFinal0]);
-
     let tempoTarefa1 = 0
     useEffect(() =>{
        tempoTarefa1 = (horaFinal1 - horaInicial1) 
        setTimeResultado1(timeResultado1 + tempoTarefa1)      
-    }, [horaFinal1]);
-    
+    }, [horaFinal1]);    
     let tempoTarefa2 = 0
     useEffect(() =>{
        tempoTarefa2 = (horaFinal2 - horaInicial2) 
        setTimeResultado2(timeResultado2 + tempoTarefa2)      
-    }, [horaFinal2]);
-    
+    }, [horaFinal2]);    
     let tempoTarefa3 = 0
     useEffect(() =>{
        tempoTarefa3 = (horaFinal3 - horaInicial3) 
        setTimeResultado3(timeResultado3 + tempoTarefa3)      
-    }, [horaFinal3]);
-    
+    }, [horaFinal3]);    
     let tempoTarefa4 = 0
     useEffect(() =>{
        tempoTarefa4 = (horaFinal4 - horaInicial4) 
        setTimeResultado4(timeResultado4 + tempoTarefa4)      
     }, [horaFinal4]);
-
     let tempoTarefa5 = 0
     useEffect(() =>{
        tempoTarefa5 = (horaFinal5 - horaInicial5) 
@@ -375,14 +366,14 @@ const Task = (props) => {
 
       //BTN START
       
-      const handleIniciar =(e)=>{
+      const handleBtnIniciar =(e)=>{
         
         //Stylos task active
         const taskStyle = document.querySelector("#tarefa_container")
         function btnIniciarStylo0(){
           taskStyle.childNodes[0].style.backgroundColor = "rgb(148, 245, 148)"
           document.querySelector("#btnIniciar0").disabled = true
-          document.querySelector("#btnParar0").disabled = false    
+          document.querySelector("#btnParar0").disabled = false            
           document.querySelector("#btnGravar0").disabled = true
         }
         function btnIniciarStylo1(){
@@ -408,6 +399,7 @@ const Task = (props) => {
           document.querySelector("#btnIniciar4").disabled = true
            document.querySelector("#btnParar4").disabled = false
            document.querySelector("#btnGravar4").disabled = true
+           
         }
         function btnIniciarStylo5(){
           taskStyle.childNodes[5].style.backgroundColor = "rgb(148, 245, 148)"
@@ -431,8 +423,7 @@ const Task = (props) => {
         const btnVerification = (e.target.id)        
               
           switch (btnVerification){                    
-                    case (btnIniciar0):      
-                      //SET VALOR TAREFA EMPRESA E COMENTARIO
+                    case (btnIniciar0):                           
                       let valor = getSelectValor[0]
                       let valSelect = valor.options[valor.selectedIndex].text
                       setTarefa0(valSelect)                                          
@@ -594,34 +585,58 @@ const Task = (props) => {
         const btnVerification = (e.target.id)     
           switch (btnVerification){                    
                     case (btnParar0): 
+                    if(horaInicial0 == 0){
+                      alert("Inicie a tarefa!")
+                    }else{
                         pause0()
                         setHoraFinal0(Date.now())                      
                         btnPararStylo0()                      
+                    }
                     break;
-                    case (btnParar1): 
+                    case (btnParar1):
+                      if(horaInicial1 == 0){
+                        alert("Inicie a tarefa!")
+                      }else{ 
                         pause1()
                         setHoraFinal1(Date.now())    
-                        btnPararStylo1()                      
+                        btnPararStylo1()   
+                      }                   
                     break;
                     case (btnParar2): 
+                    if(horaInicial2 == 0){
+                      alert("Inicie a tarefa!")
+                    }else{
                         pause2()
                         setHoraFinal2(Date.now())    
-                        btnPararStylo2()                      
+                        btnPararStylo2()      
+                    }                
                     break;
                     case (btnParar3): 
+                    if(horaInicial3 == 0){
+                      alert("Inicie a tarefa!")
+                    }else{
                         pause3()
                         setHoraFinal3(Date.now())    
-                        btnPararStylo3()                      
+                        btnPararStylo3()     
+                    }                 
                     break;
                     case (btnParar4): 
+                    if(horaInicial4 == 0){
+                      alert("Inicie a tarefa!")
+                    }else{
                         pause4()
                         setHoraFinal4(Date.now())    
-                        btnPararStylo4()                      
+                        btnPararStylo4()
+                    }                      
                     break;
                     case (btnParar5): 
+                    if(horaInicial5 == 0){
+                      alert("Inicie a tarefa!")
+                    }else{
                         pause5()
                         setHoraFinal5(Date.now())    
                         btnPararStylo5()
+                    }
                     break;
                     default:
                       console.log("Não passou pelo switch do pause")    
@@ -673,36 +688,59 @@ const Task = (props) => {
           switch (btnVerification){                    
                     case (btnGravar0):      
                       //SET VALOR TAREFA EMPRESA E COMENTARIO
-                      
-                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa0 + "\nEmpresa: " + empresa0 + "\nComentario: " + comentario0 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado0)
+                      if(timeResultado0 == 0){
+                        alert("Tarefa sem tempo para gravar!")
+                      }else{
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa0 + "\nEmpresa: " + empresa0 + "\nComentario: " + comentario0 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado0 + " milissegundos")
                         stop0()
                         btnGravarStyle0()
+                      }
                                                     
                     break;                  
                     case (btnGravar1):
-                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa1 + "\nEmpresa: " + empresa1 + "\nComentario: " + comentario1 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado1)
+                      if(timeResultado1 == 0){
+                        alert("Tarefa sem tempo para gravar!")
+                      }else{
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa1 + "\nEmpresa: " + empresa1 + "\nComentario: " + comentario1 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado1 + " milissegundos")
                         stop1()
                         btnGravarStyle1()
+                      }
                     break;        
                     case (btnGravar2):
-                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa2 + "\nEmpresa: " + empresa2 + "\nComentario: " + comentario2 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado2)
+                      if(timeResultado2 == 0){
+                        alert("Tarefa sem tempo para gravar!")
+                      }else{
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa2 + "\nEmpresa: " + empresa2 + "\nComentario: " + comentario2 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado2 + " milissegundos")
                         stop2()
                         btnGravarStyle2()
+                      }
                     break;        
                     case (btnGravar3):
-                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa3 + "\nEmpresa: " + empresa3 + "\nComentario: " + comentario3 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado3)
+                      if(timeResultado3 == 0){
+                        alert("Tarefa sem tempo para gravar!")
+                      }else{
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa3 + "\nEmpresa: " + empresa3 + "\nComentario: " + comentario3 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado3 + " milissegundos")
                         stop3()
                         btnGravarStyle3()
+                      }
                     break;        
                     case (btnGravar4):
-                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa4 + "\nEmpresa: " + empresa4 + "\nComentario: " + comentario4 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado4)
+                      if(timeResultado4 == 0){
+                        alert("Tarefa sem tempo para gravar!")
+                      }else{
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa4 + "\nEmpresa: " + empresa4 + "\nComentario: " + comentario4 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado4 + " milissegundos")
                         stop4()
                         btnGravarStyle4()
+                      }
                       break;        
                     case (btnGravar5):
-                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa5 + "\nEmpresa: " + empresa5 + "\nComentario: " + comentario5 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado5)
+                      if(timeResultado5 == 0){
+                        alert("Tarefa sem tempo para gravar!")
+                      }else{
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa5 + "\nEmpresa: " + empresa5 + "\nComentario: " + comentario5 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado5 + " milissegundos")
                         stop5()
-                        btnGravarStyle5()                   
+                        btnGravarStyle5()  
+                      }                 
                     break;
                     default:
                       console.log("Case gravar não funcionou")
@@ -735,12 +773,11 @@ const Task = (props) => {
                         <span>Comentario:</span>
                         <textarea className={styles.comentario} name="comentario" id="comentario" cols="17" rows="2" ></textarea>
                         <div className={styles.container_btn}>
-                            <button id={"btnIniciar" + index} className={styles.btnIniciar} onClick={handleIniciar}>Iniciar</button>
+                            <button id={"btnIniciar" + index} className={styles.btnIniciar} onClick={handleBtnIniciar}>Iniciar</button>
                             <button id={"btnParar" + index} className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
                             <button id={"btnGravar" + index} className={styles.btnGravar} onClick={handleBtnGravar} type="submit">Gravar</button>
                         </div>
-                        <p  className={styles.data}>{dataAtual}</p>
-                        {/* <h1 id={"cronometro" + index}>00:00:00</h1> */}
+                        <p  className={styles.data}>{dataAtual}</p>                       
                         <div className={styles.container_cronometro}>
                             <h2 id={"cronometro" + index}>00:00:00</h2>
                         </div>
