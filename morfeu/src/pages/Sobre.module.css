@@ -4,12 +4,13 @@ body{
   
 }
 
-h2{
-    margin: 40px;  
+.container h2{
+   margin: 60px;
+   margin-bottom: 30px;
 
 }
 
-p{
+.container p{
     margin-left: 75px;
     padding: 0;
 
