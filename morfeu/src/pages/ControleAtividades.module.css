@@ -14,7 +14,7 @@
     justify-content: center;
     margin-top: 10px;
     background-color: rgb(42, 165, 149);
-    height: 320px;
+    height: 300px;
     width: 70vw;
     border: 3px solid gold;
 
@@ -37,7 +37,7 @@
     margin-top: 35px;  
     flex-wrap: nowrap;
     width: 180px;
-    height: 30vh;
+    height: 36vh;
     
 }
 .btn_addTask{    
