@@ -56,32 +56,38 @@ const Task = (props) => {
     let tempoTarefa0 = 0
     useEffect(() =>{      
        tempoTarefa0 = (horaFinal0 - horaInicial0) 
-       setTimeResultado0(timeResultado0 + tempoTarefa0)      
+       setTimeResultado0(timeResultado0 + tempoTarefa0)  
+       setHoraInicial0(0)    
     }, [horaFinal0]);
     let tempoTarefa1 = 0
     useEffect(() =>{
        tempoTarefa1 = (horaFinal1 - horaInicial1) 
-       setTimeResultado1(timeResultado1 + tempoTarefa1)      
+       setTimeResultado1(timeResultado1 + tempoTarefa1)    
+       setHoraInicial1(0)  
     }, [horaFinal1]);    
     let tempoTarefa2 = 0
     useEffect(() =>{
        tempoTarefa2 = (horaFinal2 - horaInicial2) 
        setTimeResultado2(timeResultado2 + tempoTarefa2)      
+       setHoraInicial2(0) 
     }, [horaFinal2]);    
     let tempoTarefa3 = 0
     useEffect(() =>{
        tempoTarefa3 = (horaFinal3 - horaInicial3) 
        setTimeResultado3(timeResultado3 + tempoTarefa3)      
+       setHoraInicial3(0) 
     }, [horaFinal3]);    
     let tempoTarefa4 = 0
     useEffect(() =>{
        tempoTarefa4 = (horaFinal4 - horaInicial4) 
        setTimeResultado4(timeResultado4 + tempoTarefa4)      
+       setHoraInicial4(0) 
     }, [horaFinal4]);
     let tempoTarefa5 = 0
     useEffect(() =>{
        tempoTarefa5 = (horaFinal5 - horaInicial5) 
        setTimeResultado5(timeResultado5 + tempoTarefa5)      
+       setHoraInicial5(0) 
     }, [horaFinal5]);
     
       //CRONOMETRO      
@@ -588,8 +594,8 @@ const Task = (props) => {
                     if(horaInicial0 == 0){
                       alert("Inicie a tarefa!")
                     }else{
-                        pause0()
                         setHoraFinal0(Date.now())                      
+                        pause0()
                         btnPararStylo0()                      
                     }
                     break;
@@ -597,8 +603,8 @@ const Task = (props) => {
                       if(horaInicial1 == 0){
                         alert("Inicie a tarefa!")
                       }else{ 
-                        pause1()
                         setHoraFinal1(Date.now())    
+                        pause1()
                         btnPararStylo1()   
                       }                   
                     break;
@@ -606,8 +612,8 @@ const Task = (props) => {
                     if(horaInicial2 == 0){
                       alert("Inicie a tarefa!")
                     }else{
+                      setHoraFinal2(Date.now())    
                         pause2()
-                        setHoraFinal2(Date.now())    
                         btnPararStylo2()      
                     }                
                     break;
@@ -615,8 +621,8 @@ const Task = (props) => {
                     if(horaInicial3 == 0){
                       alert("Inicie a tarefa!")
                     }else{
-                        pause3()
                         setHoraFinal3(Date.now())    
+                        pause3()
                         btnPararStylo3()     
                     }                 
                     break;
@@ -624,8 +630,8 @@ const Task = (props) => {
                     if(horaInicial4 == 0){
                       alert("Inicie a tarefa!")
                     }else{
-                        pause4()
                         setHoraFinal4(Date.now())    
+                        pause4()
                         btnPararStylo4()
                     }                      
                     break;
@@ -633,8 +639,8 @@ const Task = (props) => {
                     if(horaInicial5 == 0){
                       alert("Inicie a tarefa!")
                     }else{
-                        pause5()
                         setHoraFinal5(Date.now())    
+                        pause5()
                         btnPararStylo5()
                     }
                     break;
