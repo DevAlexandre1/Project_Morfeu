@@ -106,7 +106,7 @@ const Task = (props) => {
       //Inicia o temporizador
       function start0() {
 
-        if(horaInicial0 < horaFinal0){
+        // if(horaInicial0 < horaFinal0){
        //INICIANDO O CRONOMETRO DE ONDE PAROU        
         let valor = Math.floor( timeResultado0 / 1000);
         let hours = Math.floor( valor/ 3600 );
@@ -115,7 +115,7 @@ const Task = (props) => {
         hh = hours
         mm = minutes
         ss = seconds
-        }
+        
           setCron0(setInterval(() => { timer0(); }, tempo))
       }
       function start1() {
