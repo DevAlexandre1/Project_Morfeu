@@ -13,6 +13,7 @@ import NavBar from './components/NavBar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 //Pages
+import CadastroUsuario from './pages/CadastroUsuario'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Sobre from './pages/Sobre'
@@ -30,6 +31,7 @@ function App() {
                  
         <Routes>
             <Route path="/" element={<Home/>}/>
+            <Route path="/CadastroUsuario" element={<CadastroUsuario/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/sobre" element={<Sobre/>}/>
             <Route path="/ControleAtividades" element={<ControleAtividades/>}/>

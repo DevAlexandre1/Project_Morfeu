@@ -36,7 +36,9 @@ const NavBar = () => {
             <Nav.Link eventKey={2} href="#memes">
             
             <Link className={styles.links_menu} to="/sobre">Sobre</Link>
-            <Link className={styles.links_menu} to="/login">Login</Link>
+            <Link className={styles.links_menu} to="/login">Login</Link>            
+            <Link className={styles.links_menu} to="/CadastroUsuario">Registro</Link>
+
             </Nav.Link>
             </Nav>
         </Navbar.Collapse>

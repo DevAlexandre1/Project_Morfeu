@@ -8,6 +8,8 @@ const Login = () => {
   
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
+  const [login, setLogin] = useState(false);
+
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -18,6 +20,8 @@ const Login = () => {
 const handleSubmit = (event) =>{
   event.preventDefault();
   console.log("enviando o formulario")
+  
+
   console.log(email)
   console.log(senha)
 }

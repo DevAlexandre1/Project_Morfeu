@@ -717,7 +717,6 @@ const Task = (props) => {
                         }).then((response)=>{
                           console.log(response)
                         })
-
                         //Alerta tela de usuário
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa0 + "\nEmpresa: " + empresa0 + "\nComentario: " + comentario0 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado0 + " milissegundos")
 
