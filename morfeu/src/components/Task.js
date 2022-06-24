@@ -1,6 +1,6 @@
 import { useEffect, useState} from "react"
 import styles from './Task.module.css'
-
+import Axios from "axios"
 
 
 const Task = (props) => {
@@ -701,6 +701,14 @@ const Task = (props) => {
                         alert("Tarefa sem tempo para gravar!")
                       }else{
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa0 + "\nEmpresa: " + empresa0 + "\nComentario: " + comentario0 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado0 + " milissegundos")
+
+                        Axios.post("http://localhost:3000/register",{
+                          nomeUsuario: "Cadastrar Usuarios",
+                          tarefa: tarefa0,
+                          
+                        })
+
+
                         stop0()
                         btnGravarStyle0()
                       }

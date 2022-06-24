@@ -13,3 +13,6 @@ Components reutilizáveis.
 Controle de tarefas.
 
 
+Client definido na porta 3001
+Servidor definido na porta 3000
+Banco definido na porta 3006
