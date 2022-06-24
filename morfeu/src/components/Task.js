@@ -30,6 +30,7 @@ const Task = (props) => {
 
     //DATA TIME TAREFAS
     const [data, setData]= useState()
+    const [dataAtualAmericana, setDataAtualAmericana]= useState()
 
     //HORA INICIO, FIM E TEMPO TOTAL DA TAREFA
     const [horaInicial0, setHoraInicial0] = useState(0)
@@ -372,6 +373,12 @@ const Task = (props) => {
     }
      //DATA ATUAL
     const dataAtual = new Date().toLocaleDateString() 
+    
+    useEffect(() =>{
+       setDataAtualAmericana(dataAtual.split('/').reverse().join('-'))
+    }, [dataAtual]);
+    
+    
 
       //BTN START
       
@@ -700,14 +707,19 @@ const Task = (props) => {
                       if(timeResultado0 == 0){
                         alert("Tarefa sem tempo para gravar!")
                       }else{
-                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa0 + "\nEmpresa: " + empresa0 + "\nComentario: " + comentario0 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado0 + " milissegundos")
-
                         Axios.post("http://localhost:3000/register",{
                           nomeUsuario: "Cadastrar Usuarios",
-                          tarefa: tarefa0,
-                          
+                          tarefa:tarefa0,
+                          empresa:empresa0,
+                          comentario:comentario0,
+                          data:dataAtualAmericana,
+                          tempotask:timeResultado0
+                        }).then((response)=>{
+                          console.log(response)
                         })
 
+                        //Alerta tela de usuário
+                        alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa0 + "\nEmpresa: " + empresa0 + "\nComentario: " + comentario0 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado0 + " milissegundos")
 
                         stop0()
                         btnGravarStyle0()

@@ -11,9 +11,27 @@ const db = mysql.createPool({
     database: "morfeu"
 
 })
-
 app.use(cors())
 app.use(express.json())
+
+app.post("/register",(req,res)=>{
+    const {nomeUsuario} = req.body;
+    const {tarefa} = req.body;
+    const {empresa} = req.body;
+    const {comentario} = req.body;
+    const {data} = req.body;
+    const {tempotask} = req.body;
+
+    console.log(data)
+    console.log(tempotask)
+    
+    let sql = "INSERT INTO tarefas (nomeUsuario,tarefa,empresa,comentario,data,tempotask) VALUES (?,?,?,?,?,?)"
+
+     db.query(sql,[nomeUsuario,tarefa,empresa,comentario,data,tempotask],(err,result)=>{
+            console.log(err)
+        })
+    })
+
 
 
 // app.get("/", (req,res)=>{
@@ -23,14 +41,15 @@ app.use(express.json())
 //         console.log(err)
 //     })
 // })
-app.get("/ControleAatividades", (req,res)=>{
-    let sql = "INSERT INTO tarefas (nome,tarefa,empresa,comentario,data,tempotask) VALUES ('teste','teste','teste','teste','teste')"
+// app.get("/ControleAatividades", (req,res)=>{
+//     let sql = "INSERT INTO tarefas (nome,tarefa,empresa,comentario,data,tempotask) VALUES ('teste','teste','teste','teste','teste')"
 
-    db.query(sql,(err,result)=>{
-        console.log(err)
-    })
-})
+//     db.query(sql,(err,result)=>{
+//         console.log(err)
+//     })
+// })
 
+app.post("")
 
 
 
