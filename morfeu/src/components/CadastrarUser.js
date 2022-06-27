@@ -12,12 +12,38 @@ const CadastrarUser = () => {
   const [userDepartamento, setUserDepartamento] = useState("")
   const [userNivelAcesso, setUserNivelAcesso] = useState("")
   const [userLogado, setUserLogado] = useState(false)
+  const [usuarios, setUsuarios] = useState()
   const [error, setError] = useState("")
+
+
+  userEffect(() =>{
+    Axios.get("http://localhost:3001/getUsers").then((response)=>{
+     setUsuarios(response.data)
+    })
+    console.log(usuarios)
+  },[])
+
+ 
+
 
   const handleSubmit =(e)=>{
     e.preventDefault()
 
-    Axios.post("http://localhost:3000/CadastroUsuario",{
+    setError("")
+
+    const user = {
+      userName,
+      userEmail,
+      userSenha,
+      userDepartamento,
+      userNivelAcesso
+    }
+
+    if(userSenha !== userConfirmeSenha){
+      setError("As senhas não são iguais!")
+    }
+
+    Axios.post("http://localhost:3000/register2",{
         userName:userName,
         userEmail:userEmail,
         userSenha:userSenha,
@@ -100,6 +126,7 @@ const CadastrarUser = () => {
                   </select>
                 </label>
               <button className={Style.btn_submit} >Cadastrar</button>
+              {error && <p className='error'>{error}</p>}
           </form>
         </div>
     </div>
