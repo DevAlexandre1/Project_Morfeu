@@ -1,6 +1,7 @@
 import React from 'react'
 import Style from './CadastrarUser.module.css'
 import { useState, userEffect } from 'react'
+import Axios from "axios"
 
 const CadastrarUser = () => {
 
@@ -10,10 +11,24 @@ const CadastrarUser = () => {
   const [userConfirmeSenha, setUserConfirmeSenha] =  useState("")
   const [userDepartamento, setUserDepartamento] = useState("")
   const [userNivelAcesso, setUserNivelAcesso] = useState("")
+  const [userLogado, setUserLogado] = useState(false)
   const [error, setError] = useState("")
 
   const handleSubmit =(e)=>{
     e.preventDefault()
+
+    Axios.post("http://localhost:3000/CadastroUsuario",{
+        userName:userName,
+        userEmail:userEmail,
+        userSenha:userSenha,
+        userConfirmeSenha:userConfirmeSenha,
+        userDepartamento:userDepartamento,        
+        userNivelAcesso:userNivelAcesso,        
+        }).then((response)=>{
+        console.log(response)
+      })
+      //Alerta tela de usuário
+      alert("Usuário gravado com sucesso!: \nUsuário: " + userName)
   }
 
   return (

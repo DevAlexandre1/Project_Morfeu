@@ -22,15 +22,35 @@ app.post("/register",(req,res)=>{
     const {data} = req.body;
     const {tempotask} = req.body;
 
+ 
     console.log(data)
     console.log(tempotask)
     
+    //Inserindo tabela tarefas
     let sql = "INSERT INTO tarefas (nomeUsuario,tarefa,empresa,comentario,data,tempotask) VALUES (?,?,?,?,?,?)"
 
-     db.query(sql,[nomeUsuario,tarefa,empresa,comentario,data,tempotask],(err,result)=>{
-            console.log(err)
-        })
+    db.query(sql,[nomeUsuario,tarefa,empresa,comentario,data,tempotask],(err,result)=>{
+        console.log(err)
     })
+})
+
+    //Inserindo tabela usuarios
+    app.post("/CadastroUsuario",(req,res)=>{
+        const {userName} = req.body;
+        const {userEmail} = req.body;
+        const {userSenha} = req.body;
+        const {userConfirmeSenha} = req.body;
+        const {userDepartamento} = req.body;
+        const {userNivelAcesso} = req.body;
+       
+
+    let sql2 = "INSERT INTO usuarios (userName,userEmail,userSenha,userConfirmeSenha,userDepartamento,userNivelAcesso) VALUES (?,?,?,?,?,?)"
+
+    db.query(sql2,[userName,userEmail,userSenha,userConfirmeSenha,userDepartamento,userNivelAcesso],(err,result)=>{
+        console.log(err)
+    })
+})
+   
 
 
 
