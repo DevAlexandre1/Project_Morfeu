@@ -15,17 +15,12 @@ const CadastrarUser = () => {
   const [usuarios, setUsuarios] = useState()
   const [error, setError] = useState("")
 
-  
-
 
   const handleSubmit =(e)=>{
     e.preventDefault()
    
-  
-    
-
     setError("")
-
+             
     const user = {
       userName,
       userEmail,
@@ -33,6 +28,24 @@ const CadastrarUser = () => {
       userDepartamento,
       userNivelAcesso
     }
+
+    //#####################
+
+    //Verificar se o email do usuario a ser cadastrado ja não tem no banco
+    // function checkUser(usuarios){
+    //   if(usuarios.email == userEmail){
+    //     alert("Email já cadastrado")
+    //   }
+    // }
+
+    const checkUser = usuarios.find(usuarios => usuarios.email === userEmail)
+
+
+    if(checkUser == true){
+      alert("Email ja cadastrado")
+    }
+
+    //#####################
 
     if(userSenha !== userConfirmeSenha){
       setError("As senhas não são iguais!")
@@ -57,9 +70,8 @@ const CadastrarUser = () => {
           setUsuarios(response.data);
         });
         console.log(usuarios)        
-      },[])
+    },[])
 
-    
  
   return (
      <div className={Style.container}>
