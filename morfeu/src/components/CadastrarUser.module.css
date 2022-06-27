@@ -1,10 +1,33 @@
-.container_form{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(44, 10, 233);
+.container{
+    margin-top: 40px;
+    margin-left: 150px;
+}
 
-    
+.container_form{    
+    width: 500px;
+    height: 50vh;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+  
+}
+
+.form{
+   width: 250px;
+}
+
+.btn_submit{
+    margin-left: -20px;
+}
+
+label > input{
+    margin-left: 20px;
+    width: 280px;
+}
+
+label > select{
+    margin-top: 7px;
+    margin-left: 20px;
+    width: 280px;
+
 }
