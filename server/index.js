@@ -53,26 +53,7 @@ app.get("/getUsers", (req, res) =>{
     })
 })
 
-   
-
-
-
-// app.get("/", (req,res)=>{
-//     let sql = "INSERT INTO usuarios (nome,email,senha,departamento,nivelAcesso) VALUES ('teste','teste','teste','teste','teste')"
-
-//     db.query(sql,(err,result)=>{
-//         console.log(err)
-//     })
-// })
-// app.get("/ControleAatividades", (req,res)=>{
-//     let sql = "INSERT INTO tarefas (nome,tarefa,empresa,comentario,data,tempotask) VALUES ('teste','teste','teste','teste','teste')"
-
-//     db.query(sql,(err,result)=>{
-//         console.log(err)
-//     })
-// })
-
-app.post("")
+// app.post("")
 
 
 

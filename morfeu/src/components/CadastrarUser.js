@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from './CadastrarUser.module.css'
-import { useState, userEffect } from 'react'
+import { useState, useEffect  } from 'react'
 import Axios from "axios"
 
 const CadastrarUser = () => {
@@ -15,19 +15,14 @@ const CadastrarUser = () => {
   const [usuarios, setUsuarios] = useState()
   const [error, setError] = useState("")
 
-
-  userEffect(() =>{
-    Axios.get("http://localhost:3001/getUsers").then((response)=>{
-     setUsuarios(response.data)
-    })
-    console.log(usuarios)
-  },[])
-
- 
+  
 
 
   const handleSubmit =(e)=>{
     e.preventDefault()
+   
+  
+    
 
     setError("")
 
@@ -55,8 +50,17 @@ const CadastrarUser = () => {
       })
       //Alerta tela de usuário
       alert("Usuário gravado com sucesso!: \nUsuário: " + userName)
-  }
+  };
 
+  useEffect(() => {
+    Axios.get("http://localhost:3000/getUsers").then((response)=>{
+          setUsuarios(response.data);
+        });
+        console.log(usuarios)        
+      },[])
+
+    
+ 
   return (
      <div className={Style.container}>
         <h1>Cadastro de usuário</h1>
