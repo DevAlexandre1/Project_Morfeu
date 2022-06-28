@@ -29,23 +29,14 @@ const CadastrarUser = () => {
       userNivelAcesso
     }
 
-    //#####################
+    const checkUser = usuarios.filter((el) =>{
+      return el == userEmail
+    })
 
-    //Verificar se o email do usuario a ser cadastrado ja não tem no banco
-    // function checkUser(usuarios){
-    //   if(usuarios.email == userEmail){
-    //     alert("Email já cadastrado")
-    //   }
-    // }
-
-    const checkUser = usuarios.find(usuarios => usuarios.email === userEmail)
-
-
-    if(checkUser == true){
-      alert("Email ja cadastrado")
+    if(checkUser !== ""){
+      alert("Email já esta cadastrado, entre em contato com o administrador")
+      return
     }
-
-    //#####################
 
     if(userSenha !== userConfirmeSenha){
       setError("As senhas não são iguais!")
