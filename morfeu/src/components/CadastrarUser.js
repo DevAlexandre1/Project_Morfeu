@@ -14,13 +14,13 @@ const CadastrarUser = () => {
   const [userLogado, setUserLogado] = useState(false)
   const [usuarios, setUsuarios] = useState()
   const [error, setError] = useState("")
-
+  
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-   
+    
     setError("")
-             
+    
     const user = {
       userName,
       userEmail,
@@ -28,41 +28,43 @@ const CadastrarUser = () => {
       userDepartamento,
       userNivelAcesso
     }
-
-    const checkUser = usuarios.filter((el) =>{
-      return el == userEmail
-    })
-
-    if(checkUser !== ""){
-      alert("Email já esta cadastrado, entre em contato com o administrador")
-      return
-    }
+    
+    // console.log(userEmail)
+    // const checkUser = usuarios.filter((el) =>{
+    //   return el.email == userEmail
+    // })
+    // // console.log(checkUser)
+    // //  if(checkUser == [""]){
+    // //    alert("Email já esta cadastrado, entre em contato com o administrador")
+    // //    return
+    // // }
 
     if(userSenha !== userConfirmeSenha){
       setError("As senhas não são iguais!")
+    }else{
+        Axios.post("http://localhost:3000/register2",{
+            userName:userName,
+            userEmail:userEmail,
+            userSenha:userSenha,
+            userConfirmeSenha:userConfirmeSenha,
+            userDepartamento:userDepartamento,        
+            userNivelAcesso:userNivelAcesso,        
+            }).then((response)=>{
+            
+          })
+          //Alerta tela de usuário
+          alert("Usuário gravado com sucesso!: \nUsuário: " + userName)
+      }
     }
-
-    Axios.post("http://localhost:3000/register2",{
-        userName:userName,
-        userEmail:userEmail,
-        userSenha:userSenha,
-        userConfirmeSenha:userConfirmeSenha,
-        userDepartamento:userDepartamento,        
-        userNivelAcesso:userNivelAcesso,        
-        }).then((response)=>{
-        console.log(response)
-      })
-      //Alerta tela de usuário
-      alert("Usuário gravado com sucesso!: \nUsuário: " + userName)
-  };
 
   useEffect(() => {
     Axios.get("http://localhost:3000/getUsers").then((response)=>{
           setUsuarios(response.data);
-        });
-        console.log(usuarios)        
-    },[])
+        });         
+    // console.log(userEmail)    
+    },[userEmail])
 
+  
  
   return (
      <div className={Style.container}>
