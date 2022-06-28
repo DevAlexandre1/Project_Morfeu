@@ -29,17 +29,16 @@ const CadastrarUser = () => {
       userNivelAcesso
     }
     
-    // console.log(userEmail)
-    // const checkUser = usuarios.filter((el) =>{
-    //   return el.email == userEmail
-    // })
-    // // console.log(checkUser)
-    // //  if(checkUser == [""]){
-    // //    alert("Email já esta cadastrado, entre em contato com o administrador")
-    // //    return
-    // // }
+   
+   const checkUser = usuarios.find(findEmail)
 
-    if(userSenha !== userConfirmeSenha){
+   function findEmail(item){
+      return item.email === userEmail
+   }
+
+   if(checkUser !== undefined){
+      setError("Email já cadastrado")
+   }else if(userSenha !== userConfirmeSenha){
       setError("As senhas não são iguais!")
     }else{
         Axios.post("http://localhost:3000/register2",{
@@ -55,13 +54,17 @@ const CadastrarUser = () => {
           //Alerta tela de usuário
           alert("Usuário gravado com sucesso!: \nUsuário: " + userName)
       }
+      setUserEmail("")
+      setUserName("")
+      setUserSenha("")
+      setUserConfirmeSenha("")    
     }
-
+  
   useEffect(() => {
     Axios.get("http://localhost:3000/getUsers").then((response)=>{
           setUsuarios(response.data);
         });         
-    // console.log(userEmail)    
+    
     },[userEmail])
 
   
