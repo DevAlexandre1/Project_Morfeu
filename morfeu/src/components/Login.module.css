@@ -30,10 +30,10 @@
         align-items: flex-start;
     }
 
-    input{
+    .input_form{
         margin: 7px;
         align-items: flex-start;
-        width: 220px;
+        width: 250px;
         
     }
 
@@ -56,11 +56,13 @@
     .formLogin{
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 400px;
       padding: 20px;
       margin: 20px;
       margin-left: 20px;
       font-size: 15px;
+      border: 2px solid rgb(254,203,6);
+      border-radius: 15px;
   }
   
  

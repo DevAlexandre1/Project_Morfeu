@@ -1,54 +1,44 @@
-import styles from "./Login.module.css"
+import Styles from "./Login.module.css"
 import LoginImg from "../assets/logoBrancoLogin.png"
 import {useState} from 'react'
 
 const Login = () => {
   
-  //Criando o gerenciador de dados do form
+  //Criando o gerenciador de dados do form  
+  const [userEmail, setUserEmail] = useState("")
+  const [userSenha, setUserSenha] = useState("")
   
-  const [email, setEmail] = useState();
-  const [senha, setSenha] = useState();
-  const [login, setLogin] = useState(false);
-
-
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
+  const handleSubmit =(e)=>{
+    console.log("LOGIN")
   }
-  const handleSenha = (e) => {
-    setSenha(e.target.value);
-  }
-const handleSubmit = (event) =>{
-  event.preventDefault();
-  console.log("enviando o formulario")
-  
-
-  console.log(email)
-  console.log(senha)
-}
-  
 
   return (      
-      <div className={styles.container}>         
-        <section className={styles.main_log}> 
-          <form className={styles.formLogin} onSubmit={handleSubmit}>
-            <div className ={styles.imgLogin}>
+      <div className={Styles.container}>         
+          <form className={Styles.formLogin} onSubmit={handleSubmit}>
+          <div className ={Styles.imgLogin}>
                 <img src={LoginImg} alt="ImagemLogin" />
-            </div>
-              <div >
-                  <label htmlFor="email">E-mail: </label>   
-                  <input type="email" name="email" id="email" placeholder="Digite seu email" onChange={handleEmail} />
-              </div>
-              <div>
-                  <label htmlFor="senha">Senha: </label>
-                  <input type="password" name="senha" id="senha" placeholder="Informe sua senha" onChange={handleSenha}/>
-              </div>
-              <div >
-                <button type="submit">Entrar</button>
-              </div>              
+            </div>              
+              <label>
+                  <span>E-mail:</span>
+                  <input className={Styles.input_form}
+                  type="email"
+                  name="email"
+                  required placeholder='E-mail do usuario'
+                  value={userEmail}
+                  onChange={(e)=> setUserEmail(e.target.value)}  />
+              </label>
+              <label>
+                  <span>Senha:</span>
+                  <input className={Styles.input_form}
+                  type="password"
+                  name="password"
+                  required placeholder='Insira sua senha' 
+                  value={userSenha}
+                  onChange={(e)=> setUserSenha(e.target.value)}  />
+              </label>
+              <button type="submit">Entrar</button>
           </form>
-        </section>
       </div>    
   )
 }
-
 export default Login

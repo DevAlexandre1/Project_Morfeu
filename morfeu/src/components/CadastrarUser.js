@@ -58,6 +58,7 @@ const CadastrarUser = () => {
       setUserName("")
       setUserSenha("")
       setUserConfirmeSenha("")    
+      
     }
   
   useEffect(() => {
