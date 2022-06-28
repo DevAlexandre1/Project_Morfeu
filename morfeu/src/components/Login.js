@@ -25,7 +25,9 @@ const Login = () => {
       return email.email === userEmail
    }
 
- if(checkUser == undefined){
+
+
+ if(checkUser === undefined){
     setError("Usuário não cadastrado!")
  }else if(checkUser.senha == userSenha){
   setUserLogado(userEmail)
