@@ -21,13 +21,14 @@
 }
 
 label > input{
-    margin-left: 20px;
+    margin-left: 45px;
+    margin-top: 8px;
     width: 280px;
 }
 
 label > select{
     margin-top: 7px;
-    margin-left: 20px;
+    margin-left: 45px;
     width: 280px;
 
 }

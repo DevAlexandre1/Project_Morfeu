@@ -5,9 +5,8 @@ import MenuPrincipal from './components/MenuPrincipal';
 import NavBar from './components/NavBar';
 
 
-
-//States
-// import { useState } from 'react';
+//Context
+//import { HandleControlAcess } from './context/HandleControlAcess';
 
 //Routers
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -24,11 +23,10 @@ import ControleAtividades from './pages/ControleAtividades';
 function App() {
   return (
   
-   <div className='div_app'> 
+   <div className='div_app'>    
       <BrowserRouter>
          {/* Navbar */}
-         <NavBar/>
-                 
+         <NavBar/>                 
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/CadastroUsuario" element={<CadastroUsuario/>}/>
@@ -36,10 +34,8 @@ function App() {
             <Route path="/sobre" element={<Sobre/>}/>
             <Route path="/ControleAtividades" element={<ControleAtividades/>}/>
         </Routes>      
-      </BrowserRouter>
-      
+      </BrowserRouter>        
    </div>
-
   );
 }
 

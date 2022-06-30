@@ -11,25 +11,15 @@ const CadastrarUser = () => {
   const [userConfirmeSenha, setUserConfirmeSenha] =  useState("")
   const [userDepartamento, setUserDepartamento] = useState("")
   const [userNivelAcesso, setUserNivelAcesso] = useState("")
-  const [userLogado, setUserLogado] = useState(false)
+  //const [userLogado, setUserLogado] = useState(false)
   const [usuarios, setUsuarios] = useState()
   const [error, setError] = useState("")
   
 
   const handleSubmit =(e)=>{
-    e.preventDefault()
-    
+    e.preventDefault()    
     setError("")
     
-    const user = {
-      userName,
-      userEmail,
-      userSenha,
-      userDepartamento,
-      userNivelAcesso
-    }
-    
-   
    const checkUser = usuarios.find(findEmail)
 
    function findEmail(item){

@@ -4,14 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { HandleControlTaskProvider } from './context/HandleControlTaskContext';
+//import { HandleControlAcess } from './context/HandleControlAcess';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <HandleControlTaskProvider>
-      <App />
-    </HandleControlTaskProvider>
+  <React.StrictMode>    
+      <App />    
   </React.StrictMode>
 );
 

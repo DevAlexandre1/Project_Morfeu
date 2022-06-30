@@ -3,12 +3,21 @@ import LoginImg from "../assets/logoBrancoLogin.png"
 import {useState, useEffect} from 'react'
 import Axios from "axios"
 
+
+//Context
+//import { HandleControlAcess } from '../context/HandleControlAcess';
+//import { useContext } from "react"
+
+
 const Login = () => {
-  
+
+  //const {userLog} = useContext(HandleControlAcess)
+
+
   //Criando o gerenciador de dados do form  
   const [userEmail, setUserEmail] = useState("")
   const [userSenha, setUserSenha] = useState("")
-  const [userLogado, setUserLogado] = useState(false)
+  //const [userLogado, setUserLogado] = useState(false)
   const [usuarios, setUsuarios] = useState()
   const [error, setError] = useState("")
 
@@ -30,15 +39,13 @@ const Login = () => {
  if(checkUser === undefined){
     setError("Usuário não cadastrado!")
  }else if(checkUser.senha == userSenha){
-  setUserLogado(userEmail)
-  setError("")
+   //setUserLogado(userEmail)
+   setError("")
   alert("Login efetuado com sucesso")
-
  }else{
   setError("Usuário ou senha incorreto!")
  }
-
-
+ //console.log(userLog)
   }
   useEffect(() => {
     Axios.get("http://localhost:3000/getUsers").then((response)=>{
