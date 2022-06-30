@@ -1,6 +1,13 @@
 # Project_Morfeu
 Desenvolver um plataforma base para a criação de diversas ferramentas voltada para automatizar processos contábeis e comunicacao de softwares por API
 
+FullStack project
+ -css and html
+ -react
+ -nodeJs
+ -axios
+ -mySQL
+ 
 Utilização de BootStrap;
 
 Funcionalidaedes e components React
