@@ -692,7 +692,15 @@ const Task = (props) => {
         document.querySelector("#btnParar5").disabled = false
         document.querySelector("#btnIniciar5").disabled = false
       }     
-                
+    
+      
+      //###########  TESTE  #######################
+      //Get Select task
+      const getSelectValor = document.querySelectorAll("#div_task select")
+      //Get TextArea task
+      const getTextAreaValor = document.querySelectorAll("#div_task textarea")
+      //##################################
+    
         const btnGravar0 = "btnGravar0"
         const btnGravar1 = "btnGravar1"
         const btnGravar2 = "btnGravar2"
@@ -723,6 +731,9 @@ const Task = (props) => {
 
                         stop0()
                         btnGravarStyle0()
+                        getSelectValor[0].removeAttribute("disabled")
+                        getSelectValor[1].removeAttribute("disabled")
+                        getTextAreaValor[0].removeAttribute("disabled")
                       }
                                                     
                     break;                  
@@ -743,6 +754,9 @@ const Task = (props) => {
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa1 + "\nEmpresa: " + empresa1 + "\nComentario: " + comentario1 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado1 + " milissegundos")
                         stop1()
                         btnGravarStyle1()
+                        getSelectValor[2].removeAttribute("disabled")
+                        getSelectValor[3].removeAttribute("disabled")
+                        getTextAreaValor[1].removeAttribute("disabled")
                       }
                     break;        
                     case (btnGravar2):
@@ -762,6 +776,9 @@ const Task = (props) => {
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa2 + "\nEmpresa: " + empresa2 + "\nComentario: " + comentario2 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado2 + " milissegundos")
                         stop2()
                         btnGravarStyle2()
+                        getSelectValor[4].removeAttribute("disabled")
+                        getSelectValor[5].removeAttribute("disabled")
+                        getTextAreaValor[2].removeAttribute("disabled")
                       }
                     break;        
                     case (btnGravar3):
@@ -781,6 +798,9 @@ const Task = (props) => {
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa3 + "\nEmpresa: " + empresa3 + "\nComentario: " + comentario3 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado3 + " milissegundos")
                         stop3()
                         btnGravarStyle3()
+                        getSelectValor[6].removeAttribute("disabled")
+                        getSelectValor[7].removeAttribute("disabled")
+                        getTextAreaValor[3].removeAttribute("disabled")
                       }
                     break;        
                     case (btnGravar4):
@@ -800,6 +820,9 @@ const Task = (props) => {
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa4 + "\nEmpresa: " + empresa4 + "\nComentario: " + comentario4 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado4 + " milissegundos")
                         stop4()
                         btnGravarStyle4()
+                        getSelectValor[8].removeAttribute("disabled")
+                        getSelectValor[9].removeAttribute("disabled")
+                        getTextAreaValor[4].removeAttribute("disabled")
                       }
                       break;        
                     case (btnGravar5):
@@ -819,6 +842,9 @@ const Task = (props) => {
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa5 + "\nEmpresa: " + empresa5 + "\nComentario: " + comentario5 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado5 + " milissegundos")
                         stop5()
                         btnGravarStyle5()  
+                        getSelectValor[10].removeAttribute("disabled")
+                        getSelectValor[11].removeAttribute("disabled")
+                        getTextAreaValor[5].removeAttribute("disabled")
                       }                 
                     break;
                     default:
