@@ -374,6 +374,7 @@ const Task = (props) => {
      //DATA ATUAL
     const dataAtual = new Date().toLocaleDateString() 
     
+    //Format date for americane date
     useEffect(() =>{
        setDataAtualAmericana(dataAtual.split('/').reverse().join('-'))
     }, [dataAtual]);
@@ -536,7 +537,7 @@ const Task = (props) => {
                        let valorEmp5 = getSelectValor[11]
                        let valSelectEmp5 = valorEmp5.options[valorEmp5.selectedIndex].text
                        setEmpresa5(valSelectEmp5)
-                       let valorCom5 = getTextAreaValor[0].value
+                       let valorCom5 = getTextAreaValor[5].value
                        setComentario5(valorCom5) 
                       
                        setData(dataAtual)
@@ -729,6 +730,16 @@ const Task = (props) => {
                       if(timeResultado1 == 0){
                         alert("Tarefa sem tempo para gravar!")
                       }else{
+                        Axios.post("http://localhost:3000/register",{
+                          nomeUsuario: "Cadastrar Usuarios",
+                          tarefa:tarefa1,
+                          empresa:empresa1,
+                          comentario:comentario1,
+                          data:dataAtualAmericana,
+                          tempotask:timeResultado1
+                        }).then((response)=>{
+                          console.log(response)
+                        })
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa1 + "\nEmpresa: " + empresa1 + "\nComentario: " + comentario1 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado1 + " milissegundos")
                         stop1()
                         btnGravarStyle1()
@@ -738,6 +749,16 @@ const Task = (props) => {
                       if(timeResultado2 == 0){
                         alert("Tarefa sem tempo para gravar!")
                       }else{
+                        Axios.post("http://localhost:3000/register",{
+                          nomeUsuario: "Cadastrar Usuarios",
+                          tarefa:tarefa2,
+                          empresa:empresa2,
+                          comentario:comentario2,
+                          data:dataAtualAmericana,
+                          tempotask:timeResultado2
+                        }).then((response)=>{
+                          console.log(response)
+                        })
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa2 + "\nEmpresa: " + empresa2 + "\nComentario: " + comentario2 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado2 + " milissegundos")
                         stop2()
                         btnGravarStyle2()
@@ -747,6 +768,16 @@ const Task = (props) => {
                       if(timeResultado3 == 0){
                         alert("Tarefa sem tempo para gravar!")
                       }else{
+                        Axios.post("http://localhost:3000/register",{
+                          nomeUsuario: "Cadastrar Usuarios",
+                          tarefa:tarefa3,
+                          empresa:empresa3,
+                          comentario:comentario3,
+                          data:dataAtualAmericana,
+                          tempotask:timeResultado3           
+                        }).then((response)=>{
+                          console.log(response)
+                        })
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa3 + "\nEmpresa: " + empresa3 + "\nComentario: " + comentario3 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado3 + " milissegundos")
                         stop3()
                         btnGravarStyle3()
@@ -756,6 +787,16 @@ const Task = (props) => {
                       if(timeResultado4 == 0){
                         alert("Tarefa sem tempo para gravar!")
                       }else{
+                        Axios.post("http://localhost:3000/register",{
+                          nomeUsuario: "Cadastrar Usuarios",
+                          tarefa:tarefa4,
+                          empresa:empresa4,
+                          comentario:comentario4,
+                          data:dataAtualAmericana,
+                          tempotask:timeResultado4
+                        }).then((response)=>{
+                          console.log(response)
+                        })
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa4 + "\nEmpresa: " + empresa4 + "\nComentario: " + comentario4 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado4 + " milissegundos")
                         stop4()
                         btnGravarStyle4()
@@ -765,6 +806,16 @@ const Task = (props) => {
                       if(timeResultado5 == 0){
                         alert("Tarefa sem tempo para gravar!")
                       }else{
+                        Axios.post("http://localhost:3000/register",{
+                          nomeUsuario: "Cadastrar Usuarios",
+                          tarefa:tarefa5,
+                          empresa:empresa5,
+                          comentario:comentario5,
+                          data:dataAtualAmericana,
+                          tempotask:timeResultado5
+                        }).then((response)=>{
+                          console.log(response)
+                        })
                         alert("Tarefa gravada com Sucesso: \nTarefa: " + tarefa5 + "\nEmpresa: " + empresa5 + "\nComentario: " + comentario5 + "\nData: " + dataAtual + "\nTempo utilizado na tarefa: " + timeResultado5 + " milissegundos")
                         stop5()
                         btnGravarStyle5()  
@@ -783,11 +834,11 @@ const Task = (props) => {
                   <span>Escolha a tarefa:</span>
                           <select className={styles.tarefa} name="Tarefa" id="tarefa" >
                                 <option value="tarefa1">01 - Baixa do movimento financeiro</option>
-                                <option value="tarefa2">02 - Conciliação Bancári</option>
+                                <option value="tarefa2">02 - Conciliação Bancária</option>
                                 <option value="tarefa3">03 - Conciliação do folha</option>
                                 <option value="tarefa4">04 - Conciliação de fornecedores</option>
                                 <option value="tarefa5">05 - Conciliação de clientes</option>
-                                <option value="tarefa6">06 - Obrigações acessóriasTarefa6</option>
+                                <option value="tarefa6">06 - Obrigações acessórias</option>
                           </select>
                         <span>Selecione a empresa:</span>
                         <select className={styles.empresa} name="Empresas" id="empresa" >
