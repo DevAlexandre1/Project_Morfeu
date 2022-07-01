@@ -1,15 +1,18 @@
 
 //Criando context
+import React from "react";
 import { createContext, useState } from "react";
 
-export const HandleControlAcess = createContext()
+export const ControlAcess = React.createContext({})
 
 //Provider
-export const HandleControlAcessProvider = ({children})=>{
+export const ControlAcessProvider = (props)=>{
     const [userLog, setUserLog] = useState()
 
     return (
-        <HandleControlAcess.Provider value={{userLog, setUserLog}}>{children}</HandleControlAcess.Provider>
+        <ControlAcess.Provider value={{userLog, setUserLog}}>
+         {props.children}
+        </ControlAcess.Provider>
     )
 }
 

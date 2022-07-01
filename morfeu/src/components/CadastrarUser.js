@@ -62,7 +62,7 @@ const CadastrarUser = () => {
  
   return (
      <div className={Style.container}>
-        <h1>Cadastro de usuário</h1>
+        <h1>Cadastro de usuários</h1>
         <div className={Style.container_form}>
           <form className={Style.form} onSubmit={handleSubmit}>
               <label>

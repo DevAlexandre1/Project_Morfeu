@@ -8,13 +8,16 @@ import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 //Context
-//import { useContext } from "react"
-//import { HandleControlAcess } from '../context/HandleControlAcess';
+import { ControlAcess } from "../context/HandleControlAcess"
+
 
 
 const NavBar = () => {
-  //const {userLog} = useContext(HandleControlAcess)
- 
+    const {userLog, setUserLog} = React.useContext(ControlAcess)
+
+  console.log(userLog)
+  
+
   return (
     <div>
         <header>
@@ -28,7 +31,8 @@ const NavBar = () => {
               {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
           <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-              {/* <Nav.Link href="#features">Features</Nav.Link> */}              
+              {/* <Nav.Link href="#features">Features</Nav.Link> */}
+              {userLog && (               
               <NavDropdown  className={styles.drop_ferramentas} title="Ferramentas" id="collasible-nav-dropdown">
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.1"><Link  className={styles.link_ferramentas_down}  to="/ControleAtividades">Controle de Atividades</Link></NavDropdown.Item>
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.2">Ferramenta 2</NavDropdown.Item>
@@ -38,13 +42,19 @@ const NavBar = () => {
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">demais links</NavDropdown.Item>
               </NavDropdown>
+              )} 
               </Nav>
+              
               <Nav>                  
               <Nav.Link eventKey={2} href="#memes">
               
               <Link className={styles.links_menu} to="/sobre">Sobre</Link>
-              <Link className={styles.links_menu} to="/login">Login</Link>            
-              <Link className={styles.links_menu} to="/CadastroUsuario">Registro</Link>
+              {!userLog && (                
+                  <Link className={styles.links_menu} to="/login">Login</Link>                
+              )} 
+              {userLog === "alexandre@fato.com.br" &&(                  
+                  <Link className={styles.links_menu} to="/CadastroUsuario">Registro</Link>
+              )}
               </Nav.Link>
               </Nav>
           </Navbar.Collapse>

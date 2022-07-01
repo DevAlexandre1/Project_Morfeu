@@ -1,4 +1,7 @@
 import './App.css';
+import React from 'react';
+
+
 
 //Components
 import MenuPrincipal from './components/MenuPrincipal';
@@ -6,7 +9,7 @@ import NavBar from './components/NavBar';
 
 
 //Context
-//import { HandleControlAcess } from './context/HandleControlAcess';
+import { ControlAcess } from "./context/HandleControlAcess"
 
 //Routers
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -21,6 +24,10 @@ import ControleAtividades from './pages/ControleAtividades';
 
 
 function App() {
+  const {userLog, setUserLog} = React.useContext(ControlAcess)
+
+
+
   return (
   
    <div className='div_app'>    
