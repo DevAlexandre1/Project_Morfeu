@@ -1,14 +1,17 @@
 import React from "react"
 import Styles from "./Login.module.css"
 import LoginImg from "../assets/logoBrancoLogin.png"
+
 import {useState, useEffect} from 'react'
 import Axios from "axios"
+
 import { ControlAcess } from "../context/HandleControlAcess"
 
 
 const Login = () => {
 
      const {userLog, setUserLog} = React.useContext(ControlAcess)
+     
 
      
   //Criando o gerenciador de dados do form  
@@ -31,7 +34,7 @@ const Login = () => {
  }else if(checkUser.senha == userSenha){
     setUserLog(userEmail)
     setError("") 
-  alert("Login efetuado com sucesso")  
+    
 }else{
   setError("Usuário ou senha incorreto!")
  } 

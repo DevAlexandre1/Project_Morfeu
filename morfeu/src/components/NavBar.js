@@ -46,8 +46,9 @@ const NavBar = () => {
               </Nav>              
               <Nav>                  
               <Nav.Link eventKey={2} href="#memes">
-              
-              <Link className={styles.links_menu} to="/sobre">Sobre</Link>
+              {userLog && (
+                <Link className={styles.links_menu} to="/sobre">Sobre</Link>
+              )} 
               {!userLog && (                
                   <Link className={styles.links_menu} to="/login">Login</Link>                
               )} 
