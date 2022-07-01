@@ -15,7 +15,7 @@ import { ControlAcess } from "../context/HandleControlAcess"
 const NavBar = () => {
     const {userLog, setUserLog} = React.useContext(ControlAcess)
 
-  console.log(userLog)
+ 
   
 
   return (
@@ -43,8 +43,7 @@ const NavBar = () => {
                   <NavDropdown.Item href="#action/3.4">demais links</NavDropdown.Item>
               </NavDropdown>
               )} 
-              </Nav>
-              
+              </Nav>              
               <Nav>                  
               <Nav.Link eventKey={2} href="#memes">
               

@@ -12,7 +12,7 @@ import NavBar from './components/NavBar';
 import { ControlAcess } from "./context/HandleControlAcess"
 
 //Routers
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
 //Pages
 import CadastroUsuario from './pages/CadastroUsuario'
@@ -36,10 +36,10 @@ function App() {
          <NavBar/>                 
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/CadastroUsuario" element={<CadastroUsuario/>}/>
+            <Route path="/CadastroUsuario" element={userLog ? <CadastroUsuario/> : <Navigate to="/"/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/sobre" element={<Sobre/>}/>
-            <Route path="/ControleAtividades" element={<ControleAtividades/>}/>
+            <Route path="/sobre" element={userLog ? <Sobre/> : <Navigate to="/login"/>}/>
+            <Route path="/ControleAtividades" element={userLog ? <ControleAtividades/> : <Navigate to="/login"/>}/>
         </Routes>      
       </BrowserRouter>        
    </div>
