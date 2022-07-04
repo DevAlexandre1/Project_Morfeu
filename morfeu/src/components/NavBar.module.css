@@ -42,6 +42,15 @@
     font-weight: 400;
 }
 
+ .userName{
+    padding-top: 10px;
+    color: white;
+    text-decoration: none;    
+    font-size: 15px;    
+    font-weight: 600; 
+    color: gold;
+} 
+
 .links_menu:hover{
   color: gold;
   

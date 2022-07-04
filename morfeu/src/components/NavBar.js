@@ -33,7 +33,6 @@ const NavBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
               {/* <Nav.Link href="#features">Features</Nav.Link> */}
-              
               {userLog && (               
               <NavDropdown  className={styles.drop_ferramentas} title="Ferramentas" id="collasible-nav-dropdown">
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.1"><Link  className={styles.link_ferramentas_down}  to="/ControleAtividades">Controle de Atividades</Link></NavDropdown.Item>
@@ -48,7 +47,7 @@ const NavBar = () => {
               </Nav>              
               <Nav>                  
               <Nav.Link eventKey={2} href="#memes">
-              {userLog && (
+              {userLog === "alexandre@fato.com.br" && (
                 <Link className={styles.links_menu} to="/sobre">Sobre</Link>
               )} 
               {!userLog && (                
@@ -57,8 +56,12 @@ const NavBar = () => {
               {userLog === "alexandre@fato.com.br" &&(                  
                   <Link className={styles.links_menu} to="/CadastroUsuario">Registro</Link>
               )}
+              {usuarioLogado && (
+                  <p className={styles.userName}><i>Bem vindo:</i>  {usuarioLogado}</p>
+              )}
               </Nav.Link>
               </Nav>
+              
           </Navbar.Collapse>
           </Container>
           </Navbar>
