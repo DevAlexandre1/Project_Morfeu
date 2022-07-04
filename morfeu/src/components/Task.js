@@ -6,16 +6,11 @@ import Axios from "axios"
 //Context
 import { ControlAcess } from "../context/HandleControlAcess"
 
-
 const Task = (props) => {
   const {tarefas} = props;
-
   const {userLog, setUserLog} = React.useContext(ControlAcess)
-
   const {usuarioLogado, setUsuarioLogado} = React.useContext(ControlAcess) 
-
-  
-  
+ 
 
     //DADOS TAREFAS
     const [tarefa0,setTarefa0] = useState("")
@@ -116,8 +111,7 @@ const Task = (props) => {
       //Inicia o temporizador
       function start0() {
 
-        // if(horaInicial0 < horaFinal0){
-       //INICIANDO O CRONOMETRO DE ONDE PAROU        
+        //INICIANDO O CRONOMETRO DE ONDE PAROU        
         let valor = Math.floor( timeResultado0 / 1000);
         let hours = Math.floor( valor/ 3600 );
         let minutes = Math.floor( (valor % 3600) / 60 );
@@ -251,15 +245,15 @@ const Task = (props) => {
       
       //Faz a contagem do tempo e exibição
       function timer0() {
-          ss++; //Incrementa +1 na variável ss      
+          ss++;     
           
-          if (ss == 59) { //Verifica se deu 59 segundos
-              ss = 0; //Volta os segundos para 0
-              mm++; //Adiciona +1 na variável mm      
+          if (ss == 59) { 
+              ss = 0; 
+              mm++;   
 
-              if (mm == 59) { //Verifica se deu 59 minutos
-                  mm = 0;//Volta os minutos para 0
-                  hh++;//Adiciona +1 na variável hora
+              if (mm == 59) { 
+                  mm = 0;
+                  hh++;
               }
           }               
           //Cria uma variável com o valor tratado HH:MM:SS
@@ -272,15 +266,15 @@ const Task = (props) => {
           return format0;
       }
       function timer1() {
-        ss++; //Incrementa +1 na variável ss 
+        ss++;  
            
-        if (ss == 59) { //Verifica se deu 59 segundos
-            ss = 0; //Volta os segundos para 0
-            mm++; //Adiciona +1 na variável mm  
+        if (ss == 59) { 
+            ss = 0; 
+            mm++;   
 
-            if (mm == 59) { //Verifica se deu 59 minutos
-                mm = 0;//Volta os minutos para 0
-                hh++;//Adiciona +1 na variável hora
+            if (mm == 59) { 
+                mm = 0;
+                hh++;
             }
         }    
         //Cria uma variável com o valor tratado HH:MM:SS
@@ -293,18 +287,17 @@ const Task = (props) => {
         return format1;
     }
     function timer2() {
-      ss++; //Incrementa +1 na variável ss  
+      ss++;   
 
-      if (ss == 59) { //Verifica se deu 59 segundos
-          ss = 0; //Volta os segundos para 0
-          mm++; //Adiciona +1 na variável mm  
+      if (ss == 59) { 
+          ss = 0; 
+          mm++;   
 
-          if (mm == 59) { //Verifica se deu 59 minutos
-              mm = 0;//Volta os minutos para 0
-              hh++;//Adiciona +1 na variável hora
+          if (mm == 59) { 
+              mm = 0;
+              hh++;
           }
       }  
-
       //Cria uma variável com o valor tratado HH:MM:SS
       var format2 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss); 
 
@@ -315,18 +308,17 @@ const Task = (props) => {
       return format2;
      }
       function timer3() {
-        ss++; //Incrementa +1 na variável ss
+        ss++; 
 
-        if (ss == 59) { //Verifica se deu 59 segundos
-            ss = 0; //Volta os segundos para 0
-            mm++; //Adiciona +1 na variável mm
+        if (ss == 59) { 
+            ss = 0; 
+            mm++; 
 
-            if (mm == 59) { //Verifica se deu 59 minutos
-                mm = 0;//Volta os minutos para 0
-                hh++;//Adiciona +1 na variável hora
+            if (mm == 59) { 
+                mm = 0;
+                hh++;
             }
         }
-
         //Cria uma variável com o valor tratado HH:MM:SS
         var format3 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);   
 
@@ -337,18 +329,17 @@ const Task = (props) => {
         return format3;
     }
     function timer4() {
-      ss++; //Incrementa +1 na variável ss
+      ss++; 
 
-      if (ss == 59) { //Verifica se deu 59 segundos
-          ss = 0; //Volta os segundos para 0
-          mm++; //Adiciona +1 na variável mm
+      if (ss == 59) { 
+          ss = 0; 
+          mm++; 
 
-          if (mm == 59) { //Verifica se deu 59 minutos
-              mm = 0;//Volta os minutos para 0
-              hh++;//Adiciona +1 na variável hora
+          if (mm == 59) { 
+              mm = 0;
+              hh++;
           }
       }
-
       //Cria uma variável com o valor tratado HH:MM:SS
       var format4 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);      
 
@@ -359,18 +350,17 @@ const Task = (props) => {
       return format4;
     }
     function timer5() {
-      ss++; //Incrementa +1 na variável ss
+      ss++; 
 
-      if (ss == 59) { //Verifica se deu 59 segundos
-          ss = 0; //Volta os segundos para 0
-          mm++; //Adiciona +1 na variável mm
+      if (ss == 59) { 
+          ss = 0; 
+          mm++; 
 
-          if (mm == 59) { //Verifica se deu 59 minutos
-              mm = 0;//Volta os minutos para 0
-              hh++;//Adiciona +1 na variável hora
+          if (mm == 59) { 
+              mm = 0;
+              hh++;
           }
       }
-
       //Cria uma variável com o valor tratado HH:MM:SS
       var format5 = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);  
 
@@ -388,12 +378,8 @@ const Task = (props) => {
        setDataAtualAmericana(dataAtual.split('/').reverse().join('-'))
     }, [dataAtual]);
     
-    
-
-      //BTN START
-      
-      const handleBtnIniciar =(e)=>{
-        
+      //BTN START      
+      const handleBtnIniciar =(e)=>{        
         //Stylos task active
         const taskStyle = document.querySelector("#tarefa_container")
         function btnIniciarStylo0(){
@@ -702,14 +688,11 @@ const Task = (props) => {
         document.querySelector("#btnIniciar5").disabled = false
       }     
     
-      
-      //###########  TESTE  #######################
       //Get Select task
       const getSelectValor = document.querySelectorAll("#div_task select")
       //Get TextArea task
       const getTextAreaValor = document.querySelectorAll("#div_task textarea")
-      //##################################
-    
+         
         const btnGravar0 = "btnGravar0"
         const btnGravar1 = "btnGravar1"
         const btnGravar2 = "btnGravar2"
@@ -860,7 +843,6 @@ const Task = (props) => {
                       console.log("Case gravar não funcionou")
         }
     }
-  
   return (
     <div id='tarefa_container'  className={styles.container_task}>        
       {tarefas.map((task, index) => {
@@ -870,7 +852,7 @@ const Task = (props) => {
                           <select className={styles.tarefa} name="Tarefa" id="tarefa" >
 
                                 {/* De 01 a 19 - EFETUAR LANÇAMENTOS */}
-                                
+
                                 <option value="tarefa1">01 - Regerar as notas no fiscal</option>
                                 <option value="tarefa2">02 - Ordenar o movimento contabil</option>
                                 <option value="tarefa3">03 - Lancar importar e rubricar o movimento contabil</option>
