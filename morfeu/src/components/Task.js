@@ -868,12 +868,36 @@ const Task = (props) => {
               <div id="div_task" key={index}  className={styles.task}>     
                   <span>Escolha a tarefa:</span>
                           <select className={styles.tarefa} name="Tarefa" id="tarefa" >
-                                <option value="tarefa1">01 - Baixa do movimento financeiro</option>
-                                <option value="tarefa2">02 - Conciliação Bancária</option>
-                                <option value="tarefa3">03 - Conciliação do folha</option>
-                                <option value="tarefa4">04 - Conciliação de fornecedores</option>
-                                <option value="tarefa5">05 - Conciliação de clientes</option>
-                                <option value="tarefa6">06 - Obrigações acessórias</option>
+
+                                {/* De 01 a 19 - EFETUAR LANÇAMENTOS */}
+                                
+                                <option value="tarefa1">01 - Regerar as notas no fiscal</option>
+                                <option value="tarefa2">02 - Ordenar o movimento contabil</option>
+                                <option value="tarefa3">03 - Lancar importar e rubricar o movimento contabil</option>
+                                <option value="tarefa4">04 - Integrar os impostos fiscais</option>
+                                <option value="tarefa5">05 - Calcular as provisoes do folha</option>
+                                <option value="tarefa6">06 - Integrar o folha</option>
+                                <option value="tarefa7">07 - Conferir as aquisicoes imobilizado</option>
+                                <option value="tarefa8">08 - Calcular e Integrar o Patrimonio</option>
+
+                                {/* De 20 a 39 - FAZER CONCILIAÇÕES */}
+
+                                <option value="tarefa9">20 - Bancos</option>
+                                <option value="tarefa10">21 - Clientes </option>
+                                <option value="tarefa11">22 - Adiantamentos Ativos</option>
+                                <option value="tarefa12">23 - Imobilizado</option>
+                                <option value="tarefa13">24 - Fornecedores</option>
+                                <option value="tarefa14">25 - Folha</option>
+                                <option value="tarefa15">26 - Impostos folha</option>
+                                <option value="tarefa16">27 - Impostos fiscal</option>
+                                <option value="tarefa17">28 - Contas a pagar</option>
+                                <option value="tarefa18">29 - Adiantamentos passivos</option>
+                                <option value="tarefa19">30 - Provisoes folha</option>
+                                <option value="tarefa20">31 - Capital social</option>
+                                <option value="tarefa21">32 - Receitas operacionais</option>
+                                <option value="tarefa21">33 - Receitas financeiras</option>
+                                <option value="tarefa21">34 - Despesas</option>
+                                <option value="tarefa21">35 - Custos</option>
                           </select>
                         <span>Selecione a empresa:</span>
                         <select className={styles.empresa} name="Empresas" id="empresa" >
