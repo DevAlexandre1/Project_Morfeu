@@ -1,21 +1,28 @@
 import React from "react"
 import Styles from "./Login.module.css"
 import LoginImg from "../assets/logoBrancoLogin.png"
-
 import {useState, useEffect} from 'react'
+
+//import { BrowserRouter as Router,Route,Routes,Navigate } from "react-router-dom"
 import Axios from "axios"
 
+//Navegação de paginas
+import { useNavigate } from "react-router-dom"
+
+//Context
 import { ControlAcess } from "../context/HandleControlAcess"
 
+//import {useHistory} from "react-router-dom"
 
 const Login = () => {
 
+    //Contexts
      const {userLog, setUserLog} = React.useContext(ControlAcess)
+     const {usuarioLogado, setUsuarioLogado} = React.useContext(ControlAcess)
+     
+     const navigate = useNavigate()    
 
-      const {usuarioLogado, setUsuarioLogado} = React.useContext(ControlAcess)
-     
-    
-     
+
   //Criando o gerenciador de dados do form  
   const [userEmail, setUserEmail] = useState("")
   const [userSenha, setUserSenha] = useState("")  
@@ -40,8 +47,8 @@ const Login = () => {
     }else if(checkUser.senha == userSenha){
       setUserLog(userEmail)
       setUsuarioLogado(checkUser.nome)
-      setError("")     
-      console.log(usuarioLogado)      
+      setError("")  
+      navigate("/")      
     }else{
       setError("Usuário ou senha incorreto!")
     } 
