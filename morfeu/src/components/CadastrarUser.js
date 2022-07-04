@@ -11,7 +11,7 @@ const CadastrarUser = () => {
   const [userConfirmeSenha, setUserConfirmeSenha] =  useState("")
   const [userDepartamento, setUserDepartamento] = useState("")
   const [userNivelAcesso, setUserNivelAcesso] = useState("")
-  //const [userLogado, setUserLogado] = useState(false)
+  const [userLogado, setUserLogado] = useState(false)
   const [usuarios, setUsuarios] = useState()
   const [error, setError] = useState("")
   
@@ -25,7 +25,7 @@ const CadastrarUser = () => {
    function findEmail(item){
       return item.email === userEmail
    }
-
+  
    if(checkUser !== undefined){
       setError("Email já cadastrado")
    }else if(userSenha !== userConfirmeSenha){

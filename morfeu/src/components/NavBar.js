@@ -15,7 +15,7 @@ import { ControlAcess } from "../context/HandleControlAcess"
 const NavBar = () => {
     const {userLog, setUserLog} = React.useContext(ControlAcess)
 
- 
+    const {usuarioLogado, setUsuarioLogado} = React.useContext(ControlAcess) 
   
 
   return (
@@ -28,10 +28,12 @@ const NavBar = () => {
           </Link>     
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               {/* <Link className={styles.links_menu} to="/">Home</Link> */}
-              {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
+              {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}            
+        
           <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
               {/* <Nav.Link href="#features">Features</Nav.Link> */}
+              
               {userLog && (               
               <NavDropdown  className={styles.drop_ferramentas} title="Ferramentas" id="collasible-nav-dropdown">
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.1"><Link  className={styles.link_ferramentas_down}  to="/ControleAtividades">Controle de Atividades</Link></NavDropdown.Item>

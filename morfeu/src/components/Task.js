@@ -1,10 +1,19 @@
 import { useEffect, useState} from "react"
+import React from "react"
 import styles from './Task.module.css'
 import Axios from "axios"
+
+//Context
+import { ControlAcess } from "../context/HandleControlAcess"
 
 
 const Task = (props) => {
   const {tarefas} = props;
+
+  const {userLog, setUserLog} = React.useContext(ControlAcess)
+
+  const {usuarioLogado, setUsuarioLogado} = React.useContext(ControlAcess) 
+
   
   
 
@@ -717,7 +726,7 @@ const Task = (props) => {
                         alert("Tarefa sem tempo para gravar!")
                       }else{
                         Axios.post("http://localhost:3000/register",{
-                          nomeUsuario: "Cadastrar Usuarios",
+                          nomeUsuario:usuarioLogado,
                           tarefa:tarefa0,
                           empresa:empresa0,
                           comentario:comentario0,
@@ -731,9 +740,9 @@ const Task = (props) => {
 
                         stop0()
                         btnGravarStyle0()
-                        getSelectValor[0].removeAttribute("disabled")
-                        getSelectValor[1].removeAttribute("disabled")
-                        getTextAreaValor[0].removeAttribute("disabled")
+                        getSelectValor[0].removeAttribute("disabled")                      
+                        getSelectValor[1].removeAttribute("disabled")                        
+                        getTextAreaValor[0].removeAttribute("disabled")                      
                       }
                                                     
                     break;                  
@@ -742,7 +751,7 @@ const Task = (props) => {
                         alert("Tarefa sem tempo para gravar!")
                       }else{
                         Axios.post("http://localhost:3000/register",{
-                          nomeUsuario: "Cadastrar Usuarios",
+                          nomeUsuario: usuarioLogado,
                           tarefa:tarefa1,
                           empresa:empresa1,
                           comentario:comentario1,
@@ -764,7 +773,7 @@ const Task = (props) => {
                         alert("Tarefa sem tempo para gravar!")
                       }else{
                         Axios.post("http://localhost:3000/register",{
-                          nomeUsuario: "Cadastrar Usuarios",
+                          nomeUsuario: usuarioLogado,
                           tarefa:tarefa2,
                           empresa:empresa2,
                           comentario:comentario2,
@@ -786,7 +795,7 @@ const Task = (props) => {
                         alert("Tarefa sem tempo para gravar!")
                       }else{
                         Axios.post("http://localhost:3000/register",{
-                          nomeUsuario: "Cadastrar Usuarios",
+                          nomeUsuario: usuarioLogado,
                           tarefa:tarefa3,
                           empresa:empresa3,
                           comentario:comentario3,
@@ -808,7 +817,7 @@ const Task = (props) => {
                         alert("Tarefa sem tempo para gravar!")
                       }else{
                         Axios.post("http://localhost:3000/register",{
-                          nomeUsuario: "Cadastrar Usuarios",
+                          nomeUsuario: usuarioLogado,
                           tarefa:tarefa4,
                           empresa:empresa4,
                           comentario:comentario4,
@@ -830,7 +839,7 @@ const Task = (props) => {
                         alert("Tarefa sem tempo para gravar!")
                       }else{
                         Axios.post("http://localhost:3000/register",{
-                          nomeUsuario: "Cadastrar Usuarios",
+                          nomeUsuario: usuarioLogado,
                           tarefa:tarefa5,
                           empresa:empresa5,
                           comentario:comentario5,

@@ -11,8 +11,10 @@ import { ControlAcess } from "../context/HandleControlAcess"
 const Login = () => {
 
      const {userLog, setUserLog} = React.useContext(ControlAcess)
-     
 
+      const {usuarioLogado, setUsuarioLogado} = React.useContext(ControlAcess)
+     
+    
      
   //Criando o gerenciador de dados do form  
   const [userEmail, setUserEmail] = useState("")
@@ -25,26 +27,35 @@ const Login = () => {
     setError("")
     
     const checkUser = usuarios.find(findEmail)
-    function findEmail(email){
-      return email.email === userEmail
-   }
+        
 
- if(checkUser === undefined){
-   setError("Usuário não cadastrado!")
- }else if(checkUser.senha == userSenha){
-    setUserLog(userEmail)
-    setError("") 
-    
-}else{
-  setError("Usuário ou senha incorreto!")
- } 
+    function findEmail(email){
+      return email.email === userEmail   
+          
+   }
+   
+
+   if(checkUser === undefined){
+     setError("Usuário não cadastrado!")
+    }else if(checkUser.senha == userSenha){
+      setUserLog(userEmail)
+      setUsuarioLogado(checkUser.nome)
+      setError("")     
+      console.log(usuarioLogado)      
+    }else{
+      setError("Usuário ou senha incorreto!")
+    } 
   }
+  
+
   useEffect(() => {
     Axios.get("http://localhost:3000/getUsers").then((response)=>{
           setUsuarios(response.data);
         });         
     
     },[userEmail])
+
+   
 
   return (      
       <div className={Styles.container}>         
@@ -69,7 +80,7 @@ const Login = () => {
                   required placeholder='Insira sua senha' 
                   value={userSenha}
                   onChange={(e)=> setUserSenha(e.target.value)}  />
-              </label>
+              </label>              
               <button type="submit">Entrar</button>
               {error && <p className='error'>{error}</p>}              
           </form>

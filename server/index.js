@@ -53,7 +53,6 @@ app.get("/getUsers", (req, res) =>{
     })
 })
 
-// app.post("")
 
 
 
