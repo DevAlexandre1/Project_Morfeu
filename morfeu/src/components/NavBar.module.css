@@ -49,6 +49,8 @@
     font-size: 15px;    
     font-weight: 600; 
     color: gold;
+    cursor: default; 
+    margin-bottom: 0px;
 } 
 
 .links_menu:hover{
