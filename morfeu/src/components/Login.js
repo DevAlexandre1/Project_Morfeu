@@ -3,6 +3,7 @@ import Styles from "./Login.module.css"
 import LoginImg from "../assets/logoBrancoLogin.png"
 import {useState, useEffect} from 'react'
 
+
 //import { BrowserRouter as Router,Route,Routes,Navigate } from "react-router-dom"
 import Axios from "axios"
 
@@ -19,6 +20,8 @@ const Login = () => {
     //Contexts
      const {userLog, setUserLog} = React.useContext(ControlAcess)
      const {usuarioLogado, setUsuarioLogado} = React.useContext(ControlAcess)
+     const { usuarioSenha, setUsuarioSenha} = React. useContext(ControlAcess)
+     
      
      const navigate = useNavigate()    
 
@@ -47,6 +50,7 @@ const Login = () => {
     }else if(checkUser.senha == userSenha){
       setUserLog(userEmail)
       setUsuarioLogado(checkUser.nome)
+      setUsuarioSenha(checkUser.senha)
       setError("")  
       navigate("/")      
     }else{
@@ -87,8 +91,11 @@ const Login = () => {
                   required placeholder='Insira sua senha' 
                   value={userSenha}
                   onChange={(e)=> setUserSenha(e.target.value)}  />
-              </label>              
+              </label>    
+              {/* <a className={Styles.alterSenha} href="./AlterarSenha"><i>Alterar sua senha?</i></a>  */}
+              
               <button type="submit">Entrar</button>
+              
               {error && <p className='error'>{error}</p>}              
           </form>
       </div>    

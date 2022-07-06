@@ -36,7 +36,7 @@ const NavBar = () => {
               {userLog && (               
               <NavDropdown  className={styles.drop_ferramentas} title="Ferramentas" id="collasible-nav-dropdown">
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.1"><Link  className={styles.link_ferramentas_down}  to="/ControleAtividades">Controle de Atividades</Link></NavDropdown.Item>
-                  <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.2">Ferramenta 2</NavDropdown.Item>
+                  <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.2">Lista de tarefas</NavDropdown.Item>
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.4">ferramenta 3</NavDropdown.Item>
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.5">ferramenta 4</NavDropdown.Item>
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.6">ferramenta 5</NavDropdown.Item>
@@ -57,7 +57,7 @@ const NavBar = () => {
                   <Link className={styles.links_menu} to="/CadastroUsuario">Registro</Link>
               )}
               {usuarioLogado && (
-                  <p className={styles.userName}><i>Bem vindo:</i>  {usuarioLogado}</p>
+                  <Link className={styles.userName} title="Clique para alterar sua senha!" to="/AlterarSenha"><i>Bem-vindo(a):</i>  {usuarioLogado}</Link>                 
               )}
               </Nav.Link>
               </Nav>

@@ -19,6 +19,7 @@ import CadastroUsuario from './pages/CadastroUsuario'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Sobre from './pages/Sobre'
+import AlterarSenha from './pages/AlterarSenha'
 import Footer from './components/Footer';
 import ControleAtividades from './pages/ControleAtividades';
 
@@ -40,6 +41,7 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/sobre" element={userLog ? <Sobre/> : <Navigate to="/login"/>}/>
             <Route path="/ControleAtividades" element={userLog ? <ControleAtividades/> : <Navigate to="/login"/>}/>
+            <Route path="/alterarSenha" element={userLog ? <AlterarSenha/> : <Navigate to="/login"/>}/>
         </Routes>      
       </BrowserRouter>        
    </div>
