@@ -37,19 +37,21 @@ const AlterarSenha = () => {
     e.preventDefault()    
     setError("")
     
+    //console.log(usuarioLogado)
+    //console.log(userNovaSenha)
    
     
     if(userSenhaAntiga !== usuarioSenha){
-      console.log("Senha antiga incorreta")
+      setError("Senha antiga incorreta")
     }else if(userNovaSenha === usuarioSenha){
-      console.log("Escolha uma senha diferente da senha antiga")
+      setError("Escolha uma senha diferente da senha antiga")
 
     }else if(userNovaSenha !== userConfirmeNovaSenha){
-      console.log("Nova senha e confirmação de senha são diferentes")
+      setError("Nova senha e confirmação de senha são diferentes")
     }else{
-      Axios.post("http://localhost:3000/changepassword",{
-        userName: usuarioLogado,
-        userSenha:userNovaSenha
+      Axios.put("http://localhost:3000/changepassword",{
+        usuarioLogado: usuarioLogado,
+        userNovaSenha:userNovaSenha
         }).then((response)=>{
             
       })

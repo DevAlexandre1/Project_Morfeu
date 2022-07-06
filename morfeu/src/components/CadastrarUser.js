@@ -3,6 +3,10 @@ import Style from './CadastrarUser.module.css'
 import { useState, useEffect  } from 'react'
 import Axios from "axios"
 
+//Navegação de paginas
+import { useNavigate } from "react-router-dom"
+
+
 const CadastrarUser = () => {
 
   const [userName, setUserName] = useState("")
@@ -15,6 +19,7 @@ const CadastrarUser = () => {
   const [usuarios, setUsuarios] = useState()
   const [error, setError] = useState("")
   
+  const navigate = useNavigate() 
 
   const handleSubmit =(e)=>{
     e.preventDefault()    
@@ -41,14 +46,17 @@ const CadastrarUser = () => {
             }).then((response)=>{
             
           })
-          //Alerta tela de usuário
-          alert("Usuário gravado com sucesso!: \nUsuário: " + userName)
+          let confirmarSaida = window.confirm("Usuário gravado, deseja continuar cadastrando?")
+
+          if(confirmarSaida){
+            setUserEmail("")
+            setUserName("")
+            setUserSenha("")
+            setUserConfirmeSenha("")                
+          }else{
+            navigate("/")
+          }  
       }
-      setUserEmail("")
-      setUserName("")
-      setUserSenha("")
-      setUserConfirmeSenha("")    
-      
     }
   
   useEffect(() => {
@@ -58,8 +66,6 @@ const CadastrarUser = () => {
     
     },[userEmail])
 
-  
- 
   return (
      <div className={Style.container}>
         <h1>Cadastro de usuários</h1>
