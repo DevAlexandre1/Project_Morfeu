@@ -3,8 +3,7 @@
     flex-wrap: wrap;
     width: 100%;
     border-top: 1px solid rgb(250,203,3);
-    background-color: rgb(40, 41, 42);
-    
+    background-color: rgb(40, 41, 42);    
     min-height: 87vh;
 }
 
@@ -13,10 +12,12 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    background-color: rgb(42, 165, 149);
-    height: 300px;
-    width: 70vw;
-    border: 3px solid gold;
+    margin-left: 30px;
+    background-color: white;
+    height: 40vh;
+    width: 95vw;
+    border: 2px solid gold;
+    border-radius: 15px;
 
 }
 
@@ -40,10 +41,9 @@
     height: 36vh;
     
 }
-.btn_addTask{    
-    margin-top: 30px;   
-    margin-bottom: 0px; 
-    margin-left: 30px;
+.btn_addTask{         
+    margin-top: 0px; 
+    margin-left: 50px;
     margin-right: 20px;
     width: 130px;
     height: 50px;
@@ -65,9 +65,8 @@
     justify-content: center;
     align-items: center;
     font-weight: 400;
-    color: white;    
-    height: 4vh;
-    /* height: 3vh; */
+    color: rgb(221, 221, 221);    
+    height: 4vh;    
     min-height: 25vh;
     width: 100%;
     background-color:rgb(33,37,41);

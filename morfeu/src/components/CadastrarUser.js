@@ -57,8 +57,7 @@ const CadastrarUser = () => {
             navigate("/")
           }  
       }
-    }
-  
+    }  
   useEffect(() => {
     Axios.get("http://localhost:3000/getUsers").then((response)=>{
           setUsuarios(response.data);

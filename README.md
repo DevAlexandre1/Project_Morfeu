@@ -25,8 +25,7 @@ Servidor definido na porta 3000
 Banco definido na porta 3006
 
 
-antigo packageJson
-
+antigo packageJson (Antes de tentar criar o servidor local)
 {
   "dependencies": {
     "cors": "^2.8.5",
@@ -48,3 +47,11 @@ antigo packageJson
   "license": "ISC",
   "description": ""
 }
+
+Dashboard framework: React Google Charts
+
+Get backend por período, tarefa e empresa.
+
+Retornar o tempo gasto para executar a tarefa por empresa
+
+Exemplo: Demorei x horas para conciliar a empresa X durante o mes de junho.

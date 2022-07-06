@@ -2,6 +2,7 @@ import {useState} from 'react'
 import Footer from '../components/Footer'
 import styles from './ControleAtividades.module.css'
 import Task from '../components/Task'
+import Dashboard from '../components/Dashboard'
 
 
 const ControleAtividades = () => {
@@ -21,16 +22,12 @@ const addTask=()=>{
   return (
     <div  >
         <body className={styles.container}>  
-            <div className={styles.btn_add_div}>
-                <button className={styles.btn_addTask} onClick={addTask} type="submit">Add task</button>     
-                 
-            </div>
-            <div className={styles.container_dashboard}><h1>Dashboard</h1></div>          
+            
+            <div className={styles.container_dashboard}><Dashboard/></div>          
             <div className={styles.containerTasks}>
-                {<Task tarefas={task}/> }
-                
+                {<Task tarefas={task}/> }                
             </div>
-
+            <button className={styles.btn_addTask} onClick={addTask} type="submit">Add task</button>
             </body>
                 <footer className={styles.footer}>
                     <Footer/>

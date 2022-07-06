@@ -43,7 +43,7 @@ app.post("/register2",(req,res)=>{
     })
 })
 
-//ALTER  senha do usuário
+//Alter  senha do usuário
 app.put("/changepassword", (req,res)=>{
     
     const {usuarioLogado} = req.body;
@@ -56,7 +56,7 @@ app.put("/changepassword", (req,res)=>{
     })   
 })
 
-//Pegando os dados dos usuario no banco
+//Pegando os dados dos usuarios no banco
 app.get("/getUsers", (req, res) =>{
     let sql = "SELECT * from usuarios"
 
@@ -65,8 +65,6 @@ app.get("/getUsers", (req, res) =>{
         else res.send(result)
     })
 })
-
-
 
 
 app.listen(3000,() =>{
