@@ -66,6 +66,16 @@ app.get("/getUsers", (req, res) =>{
     })
 })
 
+//Dashboard geral do usuario corrente
+app.get("/getTasks", (req,res) =>{
+    let sql4 = "SELECT * from tarefas WHERE nomeUsuario = ?"
+
+    db.query(sql4,[nomeUsuario],(err, result)=>{
+        if(err) console.log(err)
+        else res.send(result)    
+    })
+})
+
 
 app.listen(3000,() =>{
     console.log("Servidor rodando")
