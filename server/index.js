@@ -43,6 +43,22 @@ app.post("/register2",(req,res)=>{
     })
 })
 
+//Alterando senha do usuário
+app.put("/changepassword", (req,res)=>{
+    console.log(userName)
+    console.log(userSenha)
+    const {userName} = req.body;
+    const {userSenha} = req.body;
+    let sql3 = "UPDATE usuarios SET senha = ? WHERE nome = ?"
+
+    db.query(sql3,[userSenha,userName],(err, result)=>{
+        if(err) console.log(err)
+        else res.send(result)
+    })
+
+})
+
+
 //Pegando os dados dos usuario no banco
 app.get("/getUsers", (req, res) =>{
     let sql = "SELECT * from usuarios"

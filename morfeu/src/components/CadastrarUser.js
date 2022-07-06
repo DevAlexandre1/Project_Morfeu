@@ -36,7 +36,7 @@ const CadastrarUser = () => {
             userEmail:userEmail,
             userSenha:userSenha,
             userConfirmeSenha:userConfirmeSenha,
-            userDepartamento:userDepartamento,        
+            userDepartamento:userDepartamento, 
             userNivelAcesso:userNivelAcesso,        
             }).then((response)=>{
             

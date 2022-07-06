@@ -47,7 +47,15 @@ const AlterarSenha = () => {
     }else if(userNovaSenha !== userConfirmeNovaSenha){
       console.log("Nova senha e confirmação de senha são diferentes")
     }else{
-      console.log("Nova senha cadastrada com sucesso")
+      Axios.post("http://localhost:3000/changepassword",{
+        userName: usuarioLogado,
+        userSenha:userNovaSenha
+        }).then((response)=>{
+            
+      })
+      alert("Senha alterada com sucesso!")
+      navigate("/")  
+
     }
 
     
