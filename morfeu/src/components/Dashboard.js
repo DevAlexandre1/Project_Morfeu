@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Dashboard.module.css'
+import styles from './Dashboard.module.css'
 import { useEffect, useState } from 'react'
 
 const Dashboard = () => {
@@ -14,27 +14,41 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div>
-        <div>
-          <form>
-            <label>
-              <span>
-                <input type="text" />
-              </span>
-            </label>
-          </form>
+        <div className={styles.container}>
+          <div className={styles.container_filtros}>
+            <form>
+              <label>
+                <span>
+                  <h3>Filtros</h3>
+            <ul>
+              <li>Data inicial</li>
+                  <input type="text" />
+              <li>Data final</li>
+                  <input type="text" />
+              <li>Empresa</li>
+                  <input type="text" />
+              <li>Tarefa</li>          
+                  <input type="text" />
+            </ul>
+               </span>
+              </label>
+            </form>
+            <p>Filtrar apenas se o usuario requerer</p>
+            <p>Iniciando a construção do dashboard 06/07</p> 
+          </div>
+          <div className={styles.container_dashboard_principal}>
+              <p>Dashboard principal</p>
+          </div>
+          <div className={styles.container_dashboard_sec}>
+              <p>Dashboard secundario</p>
+          </div>
+          <div className={styles.container_dashboard_ter}>
+              <p>Dashboard terciario</p>
+          </div>
+
         </div>
-        <h3>Filtros</h3>
-        <ul>
-          <li>Data inicial</li>
-          <li>Data final</li>
-          <li>Empresa</li>
-          <li>Tarefa</li>          
-        </ul>
-        <h3>Lembrar de colocar padrao dashboard sem filtro, filtrar apenas se o usuario requerer</h3>
         
-      </div>
-      <h3>Iniciando a construção do dashboard 06/07</h3> </div>
+    </div>
   )
 }
 

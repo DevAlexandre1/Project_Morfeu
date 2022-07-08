@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    margin: 8px;
+    padding: 0px;
+   
+    
+}
+
+.container_filtros{
+    margin: 0px;
+    background-color: aquamarine;
+    width: 13vw;
+    height: 39vh;
+    border-radius: 14px 0px 0px 14px;
+}
+
+.container_dashboard_principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(93, 93, 184);
+    width: 50vw;
+    height: 39vh;
+}
+
+
+.container_dashboard_sec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(226, 196, 255);
+    width: 20vw;
+    height: 39vh;
+}
+
+.container_dashboard_ter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: grey;
+    width: 11vw;
+    height: 39vh;
+    border-radius: 0px 14px 14px 0px;
+}

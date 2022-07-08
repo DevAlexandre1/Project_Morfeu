@@ -1,12 +1,9 @@
 import './App.css';
 import React from 'react';
 
-
-
 //Components
 import MenuPrincipal from './components/MenuPrincipal';
 import NavBar from './components/NavBar';
-
 
 //Context
 import { ControlAcess } from "./context/HandleControlAcess"
@@ -23,11 +20,8 @@ import AlterarSenha from './pages/AlterarSenha'
 import Footer from './components/Footer';
 import ControleAtividades from './pages/ControleAtividades';
 
-
 function App() {
   const {userLog, setUserLog} = React.useContext(ControlAcess)
-
-
 
   return (
   

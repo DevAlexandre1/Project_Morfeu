@@ -6,40 +6,33 @@
     background-color: rgb(40, 41, 42);    
     min-height: 87vh;
 }
-
 .container_dashboard{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;    
     margin-top: 10px;
     margin-left: 30px;
-    background-color: white;
+    background-color: rgb(30, 33, 49);
     height: 40vh;
     width: 95vw;
     border: 2px solid gold;
     border-radius: 15px;
-
 }
-
 .containerTasks{
     width: 100%;
     margin-left: 50px;
 }
-
 .tasks{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
-
 .btn_add_div{
     display: flex;
     align-items: flex-end;
     margin-top: 35px;  
     flex-wrap: nowrap;
     width: 180px;
-    height: 36vh;
-    
+    height: 36vh;    
 }
 .btn_addTask{         
     margin-top: 0px; 
@@ -54,12 +47,10 @@
     font-weight: 600;
     cursor: pointer;
 }
-
 .btn_addTask:hover{
     background-color: rgb(250, 250, 250);
     border: 4px solid rgb(248, 216, 73);
 }
-
 .footer{
     display: flex;    
     justify-content: center;

@@ -2,6 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom"
 import styles from './NavBar.module.css'
 import ImgHome from "../assets/logoBrancoLogin.png"
+import CheckList from '../pages/tasklist/HomeTaskList'
 
 //Bootstrap
 import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap'
@@ -36,8 +37,13 @@ const NavBar = () => {
               {userLog && (               
               <NavDropdown  className={styles.drop_ferramentas} title="Ferramentas" id="collasible-nav-dropdown">
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.1"><Link  className={styles.link_ferramentas_down}  to="/ControleAtividades">Controle de Atividades</Link></NavDropdown.Item>
-                  <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.2">Lista de tarefas</NavDropdown.Item>
-                  <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.4">ferramenta 3</NavDropdown.Item>
+                  
+                  <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.2"><Link  className={styles.link_ferramentas_down}  to="/">Facilitadores</Link></NavDropdown.Item>
+
+                  <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.3"><Link  className={styles.link_ferramentas_down}  to="/CheckList">Check-list</Link></NavDropdown.Item>
+
+                  <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.4"><Link  className={styles.link_ferramentas_down}  to="/">Driver</Link></NavDropdown.Item>                  
+                  
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.5">ferramenta 4</NavDropdown.Item>
                   <NavDropdown.Item className={styles.drop_ferramentas_down} href="#action/3.6">ferramenta 5</NavDropdown.Item>
                   <NavDropdown.Divider />
