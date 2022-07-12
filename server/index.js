@@ -56,6 +56,7 @@ app.put("/changepassword", (req,res)=>{
     })   
 })
 
+
 //Pegando os dados dos usuarios no banco
 app.get("/getUsers", (req, res) =>{
     let sql = "SELECT * from usuarios"
@@ -76,6 +77,35 @@ app.get("/getTasks", (req,res) =>{
     })
 })
 
+//Testando rotas
+app.get("/",(req,res) =>{
+    res.json({message:'Testando rota home page'})
+})
+
+//Simulando uma API consumindo minha aplicação
+app.get("/getUsersTeste", (req, res) =>{
+    let sql5 = "SELECT SUM(tempoTask) AS ? from tarefas WHERE nomeUsuario = ? AND tarefa = ? AND empresa = ?  "
+
+    db.query(sql5,["Total de tempo gasto","Maria Eduarda","25 - Folha" ,"01 - Dell"], (err, result) =>{
+        if(err) console.log(err)
+        else res.send(result)
+    })
+})
+
+//Simulando uma API enviando requisição
+ app.post('/createUser', (req,res)=>{
+       const nome = req.body.nome
+       const idade = req.body.idade
+       const sexo = req.body.sexo
+       console.log(nome,idade,sexo)
+
+       if(!nome){
+        res.status(422).json({message: 'O nome é obrigatório!'})
+        return
+       }
+
+       res.status(201).json({menssage: 'Cadastrado com sucesso!'})
+ })
 
 app.listen(3000,() =>{
     console.log("Servidor rodando")

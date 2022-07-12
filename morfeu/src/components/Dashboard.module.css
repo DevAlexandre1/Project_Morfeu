@@ -8,6 +8,7 @@
 
 .container_filtros{
     margin: 0px;
+    padding: 7px;
     background-color: aquamarine;
     width: 13vw;
     height: 39vh;
@@ -19,7 +20,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    background-color: rgb(93, 93, 184);
+    background-color: rgb(73, 73, 245);
     width: 50vw;
     height: 39vh;
 }

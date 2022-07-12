@@ -34,7 +34,7 @@ const Dashboard = () => {
               </label>
             </form>
             <p>Filtrar apenas se o usuario requerer</p>
-            <p>Iniciando a construção do dashboard 06/07</p> 
+            
           </div>
           <div className={styles.container_dashboard_principal}>
               <p>Dashboard principal</p>

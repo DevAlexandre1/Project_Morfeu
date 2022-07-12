@@ -5,10 +5,15 @@
     align-items: center;
     width: 100%;
     border-top: 2px solid gold;
-    min-height: 85vh;
+    height: 95vh;
     
 }
 
+
+.container h1{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
 .container_div{
     display: flex;
     flex-direction: column;
